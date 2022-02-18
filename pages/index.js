@@ -20,7 +20,7 @@ import Category from "../components/Category";
 export default function Home({ games, newGames, featuredGames, categories }) {
   const initGames = games.slice(0, 24);
   const total = games.length;
-  console.log(total);
+
   const [scrollGames, setScrollGames] = useState(initGames);
   const [hasMore, setHasMore] = useState(true);
 
@@ -56,12 +56,6 @@ export default function Home({ games, newGames, featuredGames, categories }) {
 
           <Adsense height="h-[100px]" slot={HOME_ADS_ID} />
 
-          {/* <GameList
-            icon={gameIcon()}
-            games={games}
-            title="All Games"
-            className="third:col-span-2 md:third:col-auto third:row-span-2 md:third:row-auto"
-          /> */}
           <h2 className="flex items-center py-2 pb-0 md:text-lg font-semibold text-sky-100/80 space-x-2">
             <span className="text-lime-400">{gameIcon()}</span>
             <span>All Games</span>

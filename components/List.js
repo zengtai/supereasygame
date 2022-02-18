@@ -1,7 +1,7 @@
 import Link from "next/link";
 import Image from "./Image";
 import { starIcon } from "./Icons";
-export default function GameList({ title, games, icon, cols, className }) {
+export default function List({ title, games, icon, cols, className }) {
   const setCol = () => {
     if (cols == "2") return `grid-cols-2`;
     else if (cols == "3") return `grid-cols-3`;
@@ -44,7 +44,7 @@ export default function GameList({ title, games, icon, cols, className }) {
     } else {
       return (
         <>
-          <h2 className="flex items-center py-2 pb-0 md:text-lg font-semibold text-sky-100/80 space-x-2">
+          <h2 className="flex items-center py-2 pb-0 md:text-lg font-semibold space-x-2">
             <span className="text-lime-400">{icon}</span>
             <span>{title}</span>
           </h2>

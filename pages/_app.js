@@ -60,9 +60,9 @@ function MyApp({ Component, pageProps }) {
         />
         <link
           rel="icon"
-          href="brand/favicon.svg"
+          href="brand/favicon.png"
           sizes="any"
-          type="image/svg+xml"
+          type="image/png"
         />
       </Head>
       <Component {...pageProps} />

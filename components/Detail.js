@@ -20,6 +20,7 @@ export default function Detail({ game }) {
             width={200}
             height={200}
             className="w-full rounded-xl bg-loading bg-center bg-no-repeat bg-black/10"
+            layout="responsive"
           />
         </div>
         <div className="text-center md:text-left md:px-5">

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Image from "next/image";
+import Image from "./Image";
 
 const ListItem = ({ games, className }) => {
   return games.map((game) => (
@@ -17,7 +17,6 @@ const ListItem = ({ games, className }) => {
             alt={game.title}
             height={200}
             width={200}
-            quality={83}
             layout="responsive"
           />
         </a>

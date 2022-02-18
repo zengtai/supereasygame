@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { closeIcon, menuIcon } from "./Icons";
+import { closeIcon, menuIcon, homeIcon } from "./Icons";
 
 export default function Navbar({ items, isOpen }) {
   const router = useRouter();
@@ -40,15 +40,8 @@ export default function Navbar({ items, isOpen }) {
     <nav>
       <div className="block relative z-10">
         <Link href={`/`}>
-          <a className="absolute transition ease-in-out duration-500 md:hover:scale-105 md:top-3 md:left-3 flex justify-center items-center rounded-[100%] text-slate-600 w-20 h-20 -left-4 -top-5 z-20 bg-slate-200 shadow-[lg] shadow-stone-900">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              className="h-6 w-6"
-              viewBox="0 0 20 20"
-              fill="currentColor"
-            >
-              <path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z" />
-            </svg>
+          <a className="absolute transition ease-in-out duration-500 md:hover:scale-105 md:hover:bg-[#ffffff90] md:top-3 md:left-3 flex justify-center items-center rounded-[100%] text-cyan-800 w-20 h-20 -left-4 -top-5 z-20 bg-[#ffffff70] shadow-[lg] shadow-stone-900">
+            {homeIcon()}
           </a>
         </Link>
         <button
