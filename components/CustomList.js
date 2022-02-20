@@ -10,7 +10,7 @@ export default function CustomList({ title, games, icon, cols, className }) {
   return (
     <>
       <ul
-        className={`grid ${setCol()} sm:grid-cols-4 md:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-12 gap-3 md:gap-6 py-3`}
+        className={`grid ${setCol()} gap-3 py-3 sm:grid-cols-4 md:grid-cols-6 md:gap-6 xl:grid-cols-8 2xl:grid-cols-12`}
 
         // className={
         //   setCol()

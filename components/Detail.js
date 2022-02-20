@@ -12,29 +12,29 @@ export default function Detail({ game }) {
           Play {game.title} on {SITE_NAME}
         </title>
       </Head>
-      <div className="flex flex-col md:flex-row items-center md:items-start bg-white border-8 border-sky-100 rounded-[2rem] p-5 shadow-lg shadow-black/10 text-cyan-700">
-        <div className="aspect-square w-24 h-24 md:w-40 md:h-40 shrink-0">
+      <div className="flex flex-col items-center rounded-[2rem] border-8 border-sky-100 bg-white p-5 text-cyan-700 shadow-lg shadow-black/10 md:flex-row md:items-start">
+        <div className="aspect-square h-24 w-24 shrink-0 md:h-40 md:w-40">
           <Image
             src={game.icon}
             alt={game.title}
             width={200}
             height={200}
-            className="w-full rounded-xl bg-loading bg-center bg-no-repeat bg-black/10"
+            className="bg-loading w-full rounded-xl bg-black/10 bg-center bg-no-repeat"
             layout="responsive"
           />
         </div>
-        <div className="text-center md:text-left md:px-5">
-          <h1 className="py-2 text-xl md:text-3xl font-semibold">
+        <div className="text-center md:px-5 md:text-left">
+          <h1 className="py-2 text-xl font-semibold md:text-3xl">
             <span>{game.title}</span>
           </h1>
           <p className="capitalize">
             <Link href={`/category/${game.category.toLowerCase()}`}>
-              <a className="text-xs py-1 px-2 bg-lime-600/80 text-sky-100/90 shadow-lime-500/30 rounded-md shadow-md">
+              <a className="rounded-md bg-lime-600/80 py-1 px-2 text-xs text-sky-100/90 shadow-md shadow-lime-500/30">
                 {game.category.toLowerCase()}
               </a>
             </Link>
           </p>
-          <p className="flex flex-row justify-center md:justify-start items-center mt-3 space-x-3">
+          <p className="mt-3 flex flex-row items-center justify-center space-x-3 md:justify-start">
             <span className="text-2xl font-bold">
               <span className="flex flex-row items-center text-orange-500">
                 <span>{starIcon()}</span>
@@ -43,15 +43,15 @@ export default function Detail({ game }) {
             </span>
             <span className="opacity-50">{game.played} played</span>
           </p>
-          <p className="py-3 text-left text-sky-800/80 text-xs md:text-sm">
+          <p className="py-3 text-left text-sm text-sky-800/80 md:text-sm">
             {game.description}
           </p>
         </div>
       </div>
-      <p className="py-4 md:pt-2">
+      <p className="py-4 md:pt-4">
         <Link href={game.url}>
           <a
-            className="block md:hover:scale-110 md:hover:shadow-2xl md:hover:delay-100 md:hover:shadow-black/40 transition-transform ease-in-out duration-300 md:w-96 mx-auto bg-lime-500 text-center p-3 lg:p-4 text-lg lg:text-2xl font-semibold text-white rounded-full shadow-xl shadow-black/20"
+            className="mx-auto block rounded-full bg-lime-500 p-3 text-center text-lg font-semibold text-white shadow-xl shadow-black/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:shadow-black/40 md:hover:delay-100 lg:p-4 lg:text-2xl"
             title={`Play ${game.title} now`}
           >
             PLAY NOW

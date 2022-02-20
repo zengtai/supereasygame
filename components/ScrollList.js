@@ -33,7 +33,7 @@ export default function ScrollList({
     return (
       <>
         {title !== undefined ? (
-          <h2 className="flex items-center px-3 xl:px-8 py-2 xl:pb-1 pb-0 md:text-sm xl:text-xl font-semibold text-slate-600 space-x-2">
+          <h2 className="flex items-center space-x-2 px-3 py-2 pb-0 font-semibold text-slate-600 md:text-sm xl:px-8 xl:pb-1 xl:text-xl">
             {icon}
             <span>{title}</span>
           </h2>
@@ -47,17 +47,17 @@ export default function ScrollList({
           hasMore={hasMore}
           loader={
             <div
-              className="m-3 p-4 w-auto mx-auto animate-pulse text-center text-md"
+              className="text-md m-3 mx-auto w-auto animate-pulse p-4 text-center"
               onClick={getMoreGames}
             >
-              <span className="p-4 bg-slate-200 rounded-lg cursor-pointer">
+              <span className="cursor-pointer rounded-lg bg-slate-200 p-4">
                 Load More
               </span>
             </div>
           }
         >
           <ul
-            className={`overflow-visible grid ${setCol()} sm:grid-cols-4 md:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-12 gap-4 xl:gap-6 p-2 xl:py-4 xl:px-8`}
+            className={`grid overflow-visible ${setCol()} gap-4 p-2 sm:grid-cols-4 md:grid-cols-6 xl:grid-cols-8 xl:gap-6 xl:py-4 xl:px-8 2xl:grid-cols-12`}
           >
             <ListItem games={scrollGames} className={className} />
           </ul>

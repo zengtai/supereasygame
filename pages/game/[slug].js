@@ -13,21 +13,29 @@ export default function Games({
   categories,
   leftGames,
   rightGames,
-  bottomGamesX44,
+  bottomGames,
 }) {
   // console.log(game);
   const router = useRouter();
   const { slug } = router.query;
+
+  const AsideGameList = ({ games }) => {
+    return (
+      <ul className="grid w-full grid-cols-5 gap-3 md:grid-cols-10 md:gap-6 xl:grid-cols-2">
+        <ListItem games={games} />
+      </ul>
+    );
+  };
 
   return (
     <>
       <Layout items={categories}>
         <Adsense height="h-[100px]" slot={DETAIL_ADS_ID} />
 
-        <div className="grow p-4 md:p-8 relative z-30">
-          <div className="grid xl:grid-cols-12 xl:grid-rows-5 gap-3 md:gap-6">
-            <div className="xl:col-start-3 xl:row-start-1 xl:col-span-8 xl:row-span-3">
-              <div className="pb-3 flex flex-row space-x-2">
+        <div className="relative z-30 grow p-4 md:p-8">
+          <div className="grid gap-3 md:gap-6 xl:grid-cols-12 xl:grid-rows-5">
+            <div className="xl:col-span-8 xl:col-start-3 xl:row-span-3 xl:row-start-1">
+              <div className="flex flex-row space-x-2 pb-3">
                 <Link href={`/`}>Home</Link>
                 <span>/</span>
                 <Link href={`/category/${game.category.toLowerCase()}`}>
@@ -38,25 +46,20 @@ export default function Games({
               </div>
               <Detail game={game} />
             </div>
-            <h3 className="flex flex-row text-lg text-sky-100/80 font-semibold px-2 xl:sr-only">
-              <span className="mr-1 text-yellow-500">
-                <sparklesIcon />
-              </span>
+            <h3 className="flex flex-row px-2 text-lg font-semibold text-sky-100/80 xl:sr-only">
+              <span className="mr-1 text-yellow-500">{sparklesIcon()}</span>
               You may also like
             </h3>
-            <div className="xl:col-start-1 xl:row-start-1 xl:col-span-2 xl:row-span-5 ">
-              <ul className="grid grid-cols-5 md:grid-cols-10 xl:grid-cols-2 gap-3 md:gap-6">
-                {/* <ListItem games={leftGames} /> */}
-              </ul>
+            <div className="flex items-end bg-black/10 xl:col-span-2 xl:col-start-1 xl:row-span-5 xl:row-start-1">
+              {/* <Adsense height={`h-[200px] md:h-[200px] xl:h-[200px]`} wFull /> */}
+              <AsideGameList games={leftGames} />
             </div>
-            <div className="xl:col-start-11 xl:row-start-1 xl:col-span-2 xl:row-span-5">
-              <ul className="grid grid-cols-5 md:grid-cols-10 xl:grid-cols-2 gap-3 md:gap-6">
-                {/* <ListItem games={rightGames} /> */}
-              </ul>
+            <div className="flex items-end bg-black/10 xl:col-span-2 xl:col-start-11 xl:row-span-5 xl:row-start-1">
+              <AsideGameList games={rightGames} />
             </div>
-            <div className="xl:col-start-3 xl:row-start-4 xl:col-span-8 xl:row-span-2">
-              <ul className="grid grid-cols-5 md:grid-cols-10 xl:grid-cols-8 gap-3 md:gap-6">
-                {/* <ListItem games={bottomGamesX44} /> */}
+            <div className="items-end bg-black/10 xl:col-span-8 xl:col-start-3 xl:row-span-2 xl:row-start-4">
+              <ul className="grid grid-cols-5 gap-3 md:grid-cols-10 md:gap-6 xl:grid-cols-8">
+                <ListItem games={bottomGames} />
               </ul>
             </div>
           </div>
@@ -87,14 +90,14 @@ export async function getStaticProps(context) {
       categories,
       rightGames: games.slice(0, 10),
       leftGames: games.slice(11, 21),
-      bottomGamesX44: games.slice(22, 38),
+      bottomGames: games.slice(22, 38),
       games,
     },
   };
 }
 
 export const getStaticPaths = async () => {
-  const games = await getGames("SELECTED");
+  const games = await getGames();
   const paths = games.map((game) => ({
     params: {
       slug: game.slug,

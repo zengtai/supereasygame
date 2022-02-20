@@ -1,6 +1,7 @@
 import Head from "next/head";
 import { useState } from "react";
 import {
+  fireIcon,
   hotIcon,
   topIcon,
   gameIcon,
@@ -42,7 +43,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
         <Head>
           <title>{SITE_NAME} | Play Free Games Online</title>
         </Head>
-        <div className="grow p-4 md:px-8 md:py-4 relative z-30">
+        <div className="relative z-30 grow p-4 md:px-8 md:py-4">
           <List
             icon={hotIcon()}
             games={featuredGames}
@@ -56,7 +57,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
 
           <Adsense height="h-[100px]" slot={HOME_ADS_ID} />
 
-          <h2 className="flex items-center py-2 pb-0 md:text-lg font-semibold text-sky-100/80 space-x-2">
+          <h2 className="flex items-center space-x-2 py-2 pb-0 font-semibold text-sky-100/80 md:text-lg">
             <span className="text-lime-400">{gameIcon()}</span>
             <span>All Games</span>
           </h2>
@@ -67,26 +68,26 @@ export default function Home({ games, newGames, featuredGames, categories }) {
             hasMore={hasMore}
             loader={<div className="my-2 text-center">Loading...</div>}
           >
-            <ul className="grid grid-cols-4 md:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-12 gap-3 md:gap-6 py-3">
+            <ul className="grid grid-cols-4 gap-3 py-3 md:grid-cols-6 md:gap-6 xl:grid-cols-8 2xl:grid-cols-12">
               {scrollGames.map((game) => (
                 <li
                   key={game.id}
                   className="second:col-span-2 md:second:col-auto second:row-span-2 md:second:row-auto"
                 >
                   <Link href={`/game/${game.slug}`}>
-                    <a className="group aspect-square relative block md:hover:origin-bottom md:hover:scale-110 md:delay-50 transition duration-400 ease-in-out rounded-2xl overflow-hidden shadow-md hover:shadow-lg shadow-black/30 hover:shadow-black/40">
+                    <a className="group md:delay-50 duration-400 relative block aspect-square overflow-hidden rounded-2xl shadow-md shadow-black/30 transition ease-in-out hover:shadow-lg hover:shadow-black/40 md:hover:origin-bottom md:hover:scale-110">
                       <Image
                         src={game.icon}
                         alt={game.title}
                         width={200}
                         height={200}
                         layout="responsive"
-                        className="w-full bg-loading bg-center bg-no-repeat"
+                        className="bg-loading w-full bg-center bg-no-repeat"
                       />
-                      <div className="absolute hidden sm:flex justify-center items-end w-full h-full font-semibold -bottom-[150%] md:group-hover:bottom-0 group-hover:bg-gradient-to-t group-hover:from-black group-hover:to-black/0 text-center text-xs">
-                        <div className="p-2 h-auto w-full text-ellipsis text-center">
+                      <div className="absolute -bottom-[150%] hidden h-full w-full items-end justify-center text-center text-xs font-semibold group-hover:bg-gradient-to-t group-hover:from-black group-hover:to-black/0 sm:flex md:group-hover:bottom-0">
+                        <div className="h-auto w-full text-ellipsis p-2 text-center">
                           <h3 className="leading-4">{game.title}</h3>
-                          <p className="flex flex-row justify-center items-center text-xl font-bold text-orange-500">
+                          <p className="flex flex-row items-center justify-center text-xl font-bold text-orange-500">
                             {starIcon()}
                             {game.stars}
                           </p>
