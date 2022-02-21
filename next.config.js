@@ -5,7 +5,7 @@ module.exports = {
     disableStaticImages: true,
   },
   reactStrictMode: true,
-  distDir: "build",
-  trailingSlash: true,
+  // distDir: "build",
+  // trailingSlash: true,
   // basePath: "/",
 };
