@@ -16,6 +16,7 @@ function MyApp({ Component, pageProps }) {
       NProgress.start();
     };
     const handleStop = (url) => {
+      console.log(`${url}`);
       NProgress.done();
     };
     const handleDone = (url) => {
@@ -61,7 +62,7 @@ function MyApp({ Component, pageProps }) {
         />
         <link
           rel="icon"
-          href="brand/favicon.png"
+          href="/brand/favicon.png"
           sizes="any"
           type="image/png"
         />
