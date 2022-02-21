@@ -21,6 +21,10 @@
 
 API 设置位置：`/lib/api.js`
 
-## 插件
+## 额外插件
 
-Tailwind CSS
+tailwindcss // 样式生成
+postcss // 样式生成
+prettier-plugin-tailwindcss // 格式化
+react-infinite-scroll-component // 无限加载
+nprogress // 路由进度条
