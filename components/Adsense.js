@@ -18,7 +18,7 @@ export default function Adsense({ slot, height, wFull }) {
 
   return (
     <div
-      className={`relative z-30 my-2 mx-auto w-[300px] overflow-hidden before:absolute before:left-1/2 before:top-0 before:-translate-x-1/2 before:opacity-50 before:content-['Advertisement'] ${height} md:h-[90px] ${
+      className={`relative z-30 my-3 mx-auto w-[300px] overflow-hidden before:absolute before:left-1/2 before:top-0 before:-translate-x-1/2 before:opacity-50 before:content-['Advertisement'] ${height} md:h-[90px] ${
         wFull ? `md:w-full` : `md:w-[728px] lg:w-[970px]`
       } bg-black/10`}
     >

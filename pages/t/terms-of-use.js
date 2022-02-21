@@ -5,7 +5,7 @@ export default function Terms({ categories }) {
   return (
     <>
       <Layout items={categories}>
-        <div className="p-3 xl:mx-auto xl:w-[1120px]">
+        <div className="p-6 xl:mx-auto xl:w-[1120px]">
           <div className="text-xl font-bold">{SITE_NAME} Terms of Use</div>
           <p className="my-2">
             The {SITE_NAME} website located at {SITE_URL} is a copyrighted work
@@ -31,7 +31,7 @@ export default function Terms({ categories }) {
             individual basis to resolve disputes and also limit the remedies
             available to you in the event of a dispute.
           </p>
-          <h2 className="text-md font-bold my-3">Access to the Site</h2>
+          <h2 className="text-md my-3 font-bold">Access to the Site</h2>
           <p className="my-2">
             <strong>Subject to these Terms.</strong> Company grants you a
             non-transferable, non-exclusive, revocable, limited license to
@@ -74,7 +74,7 @@ export default function Terms({ categories }) {
             rights expressed in Section 2.1. Company and its suppliers reserve
             all rights not granted in these Terms.
           </p>
-          <h2 className="text-md font-bold my-3">
+          <h2 className="text-md my-3 font-bold">
             Third-Party Links &amp; Ads; Other Users
           </h2>
           <p className="my-2">
@@ -137,7 +137,7 @@ export default function Terms({ categories }) {
               https://policies.google.com/technologies/ads
             </a>
           </p>
-          <h2 className="text-md font-bold my-3">Disclaimers</h2>
+          <h2 className="text-md my-3 font-bold">Disclaimers</h2>
           <p className="my-2">
             The site is provided on an “as-is” and “as available” basis, and
             company and our suppliers expressly disclaim any and all warranties
@@ -158,7 +158,7 @@ export default function Terms({ categories }) {
             jurisdictions do not allow limitations on how long an implied
             warranty lasts, so the above limitation may not apply to you.
           </p>
-          <h2 className="text-md font-bold my-3">Limitation on Liability</h2>
+          <h2 className="text-md my-3 font-bold">Limitation on Liability</h2>
           <p className="my-2">
             To the maximum extent permitted by law, in no event shall company or
             our suppliers be liable to you or any third-party for any lost
@@ -201,7 +201,7 @@ export default function Terms({ categories }) {
             provisions of these Terms will remain in effect: Sections 2 through
             2.5, Section 3 and Sections 4 through 10.
           </p>
-          <h2 className="text-md font-bold my-3">Copyright Policy.</h2>
+          <h2 className="text-md my-3 font-bold">Copyright Policy.</h2>
           <p className="my-2">
             Company respects the intellectual property of others and asks that
             users of our Site do the same.&nbsp; In connection with our Site, we
@@ -215,7 +215,7 @@ export default function Terms({ categories }) {
             in the form of a written notification (pursuant to 17 U.S.C. §
             512(c)) must be provided to our designated Copyright Agent:
           </p>
-          <ul className="list-disc list-outside ml-4 my-2">
+          <ul className="my-2 ml-4 list-outside list-disc">
             <li>your physical or electronic signature;</li>
             <li>
               identification of the copyrighted work(s) that you claim to have
@@ -248,7 +248,7 @@ export default function Terms({ categories }) {
             damages, costs and attorney’s fees incurred by us in connection with
             the written notification and allegation of copyright infringement.
           </p>
-          <h2 className="text-md font-bold my-3">General</h2>
+          <h2 className="text-md my-3 font-bold">General</h2>
           <p className="my-2">
             These Terms are subject to occasional revision, and if we make any
             substantial changes, we may notify you by sending you an e-mail to
@@ -501,7 +501,7 @@ export default function Terms({ categories }) {
             prior written consent or the consent of such third party which may
             own the Marks.
           </p>
-          <h2 className="text-md font-bold my-3">Contact Information</h2>
+          <h2 className="text-md my-3 font-bold">Contact Information</h2>
           <p className="my-2">Address: Singapore</p>
           <p className="my-2">Email: contact@{SITE_NAME}.com</p>
         </div>

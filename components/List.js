@@ -44,7 +44,7 @@ export default function List({ title, games, icon, cols, className }) {
     } else {
       return (
         <>
-          <h2 className="flex items-center space-x-2 py-2 pb-0 font-semibold md:text-lg">
+          <h2 className="flex items-center space-x-2 py-2 pb-0 font-semibold drop-shadow md:text-lg">
             <span className="text-lime-400">{icon}</span>
             <span>{title}</span>
           </h2>

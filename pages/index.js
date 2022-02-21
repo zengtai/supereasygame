@@ -43,70 +43,79 @@ export default function Home({ games, newGames, featuredGames, categories }) {
         <Head>
           <title>{SITE_NAME} | Play Free Games Online</title>
         </Head>
-        <div className="relative z-30 grow p-4 md:px-8 md:py-4">
-          <List
-            icon={hotIcon()}
-            games={featuredGames}
-            title="Popular This Week"
-            cols="3"
-          />
+        <div className="relative z-30 grow py-4">
+          <div className="px-6 md:px-8">
+            <List
+              icon={hotIcon()}
+              games={featuredGames}
+              title="Popular This Week"
+              cols="3"
+            />
+          </div>
 
           <Adsense height="h-[100px]" slot={HOME_ADS_ID} />
-
-          <List icon={topIcon()} games={newGames} title="New Games" cols="5" />
+          <div className="px-6 md:px-8">
+            <List
+              icon={topIcon()}
+              games={newGames}
+              title="New Games"
+              cols="5"
+            />
+          </div>
 
           <Adsense height="h-[100px]" slot={HOME_ADS_ID} />
-
-          <h2 className="flex items-center space-x-2 py-2 pb-0 font-semibold text-sky-100/80 md:text-lg">
-            <span className="text-lime-400">{gameIcon()}</span>
-            <span>All Games</span>
-          </h2>
-          <InfiniteScroll
-            style={{ overflow: "visible" }}
-            dataLength={scrollGames.length}
-            next={getMoreGames}
-            hasMore={hasMore}
-            loader={<div className="my-2 text-center">Loading...</div>}
-          >
-            <ul className="grid grid-cols-4 gap-3 py-3 md:grid-cols-6 md:gap-6 xl:grid-cols-8 2xl:grid-cols-12">
-              {scrollGames.map((game) => (
-                <li
-                  key={game.id}
-                  className="second:col-span-2 md:second:col-auto second:row-span-2 md:second:row-auto"
-                >
-                  <Link href={`/game/${game.slug}`}>
-                    <a className="group md:delay-50 duration-400 relative block aspect-square overflow-hidden rounded-2xl shadow-md shadow-black/30 transition ease-in-out hover:shadow-lg hover:shadow-black/40 md:hover:origin-bottom md:hover:scale-110">
-                      <Image
-                        src={game.icon}
-                        alt={game.title}
-                        width={200}
-                        height={200}
-                        layout="responsive"
-                        className="bg-loading w-full bg-center bg-no-repeat"
-                      />
-                      <div className="absolute -bottom-[150%] hidden h-full w-full items-end justify-center text-center text-xs font-semibold group-hover:bg-gradient-to-t group-hover:from-black group-hover:to-black/0 sm:flex md:group-hover:bottom-0">
-                        <div className="h-auto w-full text-ellipsis p-2 text-center">
-                          <h3 className="leading-4">{game.title}</h3>
-                          <p className="flex flex-row items-center justify-center text-xl font-bold text-orange-500">
-                            {starIcon()}
-                            {game.stars}
-                          </p>
+          <div className="px-6 md:px-8">
+            <h2 className="flex items-center space-x-2 py-2 pb-0 font-semibold text-sky-100 drop-shadow md:text-lg">
+              <span className="text-lime-400">{gameIcon()}</span>
+              <span>All Games</span>
+            </h2>
+            <InfiniteScroll
+              style={{ overflow: "visible" }}
+              dataLength={scrollGames.length}
+              next={getMoreGames}
+              hasMore={hasMore}
+              loader={<div className="my-2 text-center">Loading...</div>}
+            >
+              <ul className="grid grid-cols-4 gap-3 py-3 md:grid-cols-6 md:gap-6 xl:grid-cols-8 2xl:grid-cols-12">
+                {scrollGames.map((game) => (
+                  <li
+                    key={game.id}
+                    className="second:col-span-2 md:second:col-auto second:row-span-2 md:second:row-auto"
+                  >
+                    <Link href={`/game/${game.slug}`}>
+                      <a className="group md:delay-50 duration-400 relative block aspect-square overflow-hidden rounded-2xl shadow-md shadow-black/30 transition ease-in-out hover:shadow-lg hover:shadow-black/40 md:hover:origin-bottom md:hover:scale-110">
+                        <Image
+                          src={game.icon}
+                          alt={game.title}
+                          width={200}
+                          height={200}
+                          layout="responsive"
+                          className="bg-loading w-full bg-center bg-no-repeat"
+                        />
+                        <div className="absolute -bottom-[150%] hidden h-full w-full items-end justify-center text-center text-xs font-semibold group-hover:bg-gradient-to-t group-hover:from-black group-hover:to-black/0 sm:flex md:group-hover:bottom-0">
+                          <div className="h-auto w-full text-ellipsis p-2 text-center">
+                            <h3 className="leading-4">{game.title}</h3>
+                            <p className="flex flex-row items-center justify-center text-xl font-bold text-orange-500">
+                              {starIcon()}
+                              {game.stars}
+                            </p>
+                          </div>
                         </div>
-                      </div>
-                    </a>
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </InfiniteScroll>
-
+                      </a>
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </InfiniteScroll>
+          </div>
           <Adsense height="h-[200px]" slot={HOME_ADS_ID} />
-
-          <Category
-            icon={categoryIcon()}
-            title="Categories"
-            categories={categories}
-          />
+          <div className="px-6">
+            <Category
+              icon={categoryIcon()}
+              title="Categories"
+              categories={categories}
+            />
+          </div>
         </div>
       </Layout>
     </>
@@ -116,7 +125,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
 export const getStaticProps = async () => {
   // const games = await getGames();
   const games = await getGames();
-  const newGames = await getGames("LATEST", 20);
+  const newGames = await getGames("LATEST", 10);
   const featuredGames = await getGames("FEATURED_GAMES");
   const categories = await getCategories();
 
