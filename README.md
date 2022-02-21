@@ -20,3 +20,7 @@
 - `FEATURED_GAMES` // 设置推荐游戏，数组
 
 API 设置位置：`/lib/api.js`
+
+## 插件
+
+Tailwind CSS
