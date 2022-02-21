@@ -39,23 +39,23 @@ export default function Navbar({ items, isOpen }) {
     );
   });
   return (
-    <nav className="relative bg-cyan-700 after:absolute after:-bottom-4 after:right-0 after:h-16 after:w-full after:skew-y-2 after:bg-cyan-800 md:after:hidden">
-      <div className="relative z-10 block">
+    <nav className="relative z-20 bg-[#fff9db] md:bg-transparent md:after:hidden">
+      <div className="relative z-30 block">
         <Link href={`/`}>
-          <a className="shadow-[lg] absolute -left-3 -top-3 z-20 flex h-16 w-16 items-center justify-center rounded-[100%] p-1 text-cyan-800 shadow-stone-900 outline outline-4 outline-lime-400 transition duration-500 ease-in-out md:top-5 md:left-3 md:h-16 md:w-16 md:bg-cyan-600 md:hover:scale-105 md:hover:bg-cyan-500">
+          <a className="shadow-[lg] absolute left-2 top-1 z-20 flex items-center justify-center rounded-[100%] p-1 text-cyan-800 shadow-stone-900 transition duration-500 ease-in-out md:top-5 md:left-3 md:h-16 md:w-16 md:bg-cyan-600 md:outline md:outline-4 md:outline-cyan-500 md:hover:scale-105 md:hover:bg-cyan-500">
             {/* {homeIcon()} */}
             <Image
-              src="/brand/logo-sm.png"
+              src="/brand/logo.png"
               alt={SITE_NAME}
-              width={80}
-              height={80}
+              width={180}
+              height={36}
               className="w-full"
             />
           </a>
         </Link>
         <button
           onClick={toggle}
-          className="ml-auto flex h-10 w-10 items-center justify-center md:hidden"
+          className="ml-auto flex h-10 w-10 items-center justify-center text-[#463838] md:hidden"
         >
           {!isMenuOpen ? closeIcon() : menuIcon()}
         </button>
@@ -65,7 +65,7 @@ export default function Navbar({ items, isOpen }) {
           } relative z-30 block p-3 md:z-10
           `}
         >
-          <ul className="flex flex-wrap rounded-3xl bg-cyan-900 p-2 capitalize shadow-lg shadow-slate-900/20 md:ml-3 md:mt-2 md:pl-20">
+          <ul className="relative z-30 flex flex-wrap rounded-3xl bg-[#463838] p-2 capitalize shadow-lg shadow-slate-900/20 md:ml-3 md:mt-2 md:bg-[#463838] md:pl-20">
             {categoryNav}
           </ul>
         </div>

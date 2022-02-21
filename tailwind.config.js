@@ -6,11 +6,10 @@ module.exports = {
     "./pages/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
-  theme: {
-    extend: {
-      backgroundImage: {
-        loading: "url('../public/images/loading.svg')",
-      },
+  theme: {},
+  extend: {
+    backgroundImage: {
+      loading: "url('../public/images/loading.svg')",
     },
   },
   plugins: [

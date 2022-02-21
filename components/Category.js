@@ -1,9 +1,9 @@
 import Link from "next/link";
 export default function Category({ title, categories, icon }) {
   const categoryList = categories.map((category, index) => (
-    <li key={index} className="mx-1 mb-2 capitalize xl:mx-2">
+    <li key={index} className="mb-2 basis-1/3 capitalize xl:mx-2">
       <Link href={`/category/${category}`}>
-        <a className="block rounded-full bg-cyan-600 py-2 px-2 text-sm text-cyan-200  shadow-md shadow-cyan-800 transition duration-300 ease-in-out hover:scale-110 md:px-3">
+        <a className="mx-2 block rounded-full bg-[#FFB03A] py-2 px-2 text-center text-sm text-yellow-800  shadow-md shadow-yellow-700 transition duration-300 ease-in-out hover:scale-110 md:px-3">
           {category}
         </a>
       </Link>
@@ -19,11 +19,13 @@ export default function Category({ title, categories, icon }) {
     } else {
       return (
         <>
-          <h2 className="text-md flex items-center space-x-2 py-2 pb-0 font-semibold md:text-lg xl:pb-1 xl:text-xl">
-            <span className="text-lime-400">{icon}</span>
+          <h2 className="relative z-20 flex items-center space-x-2 px-4 pt-4 pb-0 font-semibold text-[#463838] md:text-lg">
+            <span>{icon}</span>
             <span>{title}</span>
           </h2>
-          <ul className="flex flex-wrap pt-3 xl:py-4">{categoryList}</ul>
+          <ul className="relative z-20 flex flex-wrap px-3 py-3 md:px-6 xl:py-4">
+            {categoryList}
+          </ul>
         </>
       );
     }
