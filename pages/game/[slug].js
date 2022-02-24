@@ -50,14 +50,14 @@ export default function Games({
               <span className="mr-1 text-yellow-500">{sparklesIcon()}</span>
               You may also like
             </h3>
-            <div className="flex items-end bg-black/10 xl:col-span-2 xl:col-start-1 xl:row-span-5 xl:row-start-1">
+            <div className="flex items-end xl:col-span-2 xl:col-start-1 xl:row-span-5 xl:row-start-1">
               {/* <Adsense height={`h-[200px] md:h-[200px] xl:h-[200px]`} wFull /> */}
               <AsideGameList games={leftGames} />
             </div>
-            <div className="flex items-end bg-black/10 xl:col-span-2 xl:col-start-11 xl:row-span-5 xl:row-start-1">
+            <div className="flex items-end xl:col-span-2 xl:col-start-11 xl:row-span-5 xl:row-start-1">
               <AsideGameList games={rightGames} />
             </div>
-            <div className="flex items-end bg-black/10 xl:col-span-8 xl:col-start-3 xl:row-span-2 xl:row-start-4">
+            <div className="flex items-end xl:col-span-8 xl:col-start-3 xl:row-span-2 xl:row-start-4">
               <ul className="grid w-full grid-cols-5 gap-3 md:grid-cols-10 md:gap-6 xl:grid-cols-8">
                 <ListItem games={bottomGames} />
               </ul>
