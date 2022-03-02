@@ -4,8 +4,9 @@ module.exports = {
     domains: ["cdn.iwantalipstick.com"],
     disableStaticImages: true,
   },
-  reactStrictMode: true,
-  // distDir: "build",
-  // trailingSlash: true,
   // basePath: "/",
+  reactStrictMode: true,
+  distDir: "build",
+  trailingSlash: true,
+  generateBuildId: () => "playgamemobi",
 };
