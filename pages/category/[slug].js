@@ -26,7 +26,7 @@ export default function GamesListByCategory({ games, categories }) {
         <Adsense height="h-[100px]" slot={CAT_ADS_ID} />
 
         <div className="grow md:p-8">
-          <h1 className="px-2 pb-2 text-center text-xl font-semibold capitalize text-sky-100/90 md:pb-3 md:text-3xl">
+          <h1 className="px-2 pb-2 text-center text-xl font-semibold capitalize text-[#463838] before:absolute before:left-0 before:-top-6 before:-z-10 before:h-12 before:w-full before:skew-y-6 before:bg-[#FFF9DB] after:absolute after:left-0 after:-bottom-4 after:z-40 after:h-10 after:w-full after:-skew-y-6 after:bg-[#C84B26] md:pb-3 md:text-3xl">
             {categoryName} Games
           </h1>
           <List cols="3" games={games} />
