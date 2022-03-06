@@ -1,5 +1,7 @@
 ## 参数说明
 
+### SuperEasyGame
+
 参数设置位置：`/lib/constant.js`
 
 - `API_URL` // 游戏源
