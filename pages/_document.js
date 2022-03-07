@@ -12,7 +12,7 @@ class MyDocument extends Document {
             crossOrigin="anonymous"
           />
         </Head>
-        <body className="bg-[#FFF9DB]">
+        <body className="bg-[#FFF9DB] md:bg-[#FF5321]">
           <Main />
           <NextScript />
         </body>

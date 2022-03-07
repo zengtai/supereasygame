@@ -22,17 +22,18 @@ export default function GamesListByCategory({ games, categories }) {
             {categoryName} Games | Play {categoryName} Games on {SITE_NAME}
           </title>
         </Head>
-
-        <Adsense height="h-[100px]" slot={CAT_ADS_ID} />
-
-        <div className="grow md:p-8">
-          <h1 className="px-2 pb-2 text-center text-xl font-semibold capitalize text-[#463838] before:absolute before:left-0 before:-top-6 before:-z-10 before:h-12 before:w-full before:skew-y-6 before:bg-[#FFF9DB] after:absolute after:left-0 after:-bottom-4 after:z-40 after:h-10 after:w-full after:-skew-y-6 after:bg-[#C84B26] md:pb-3 md:text-3xl">
+        <div className="mb-4">
+          <Adsense height="h-[100px]" slot={CAT_ADS_ID} />
+          <h1 className="relative z-20 p-2 text-center text-xl font-semibold capitalize text-[#463838] md:pb-3 md:text-3xl">
             {categoryName} Games
           </h1>
+        </div>
+        <div className="relative z-20 grow bg-[#FF5321] before:absolute before:left-0 before:-top-3 before:z-10 before:h-10 before:w-full before:-skew-y-[3deg] before:bg-[#FF5321] after:absolute after:left-0 after:-bottom-3 after:z-0 after:h-10 after:w-full after:skew-y-[3deg] after:bg-[#FF5321] md:p-8 md:before:hidden md:after:hidden">
           <List cols="3" games={games} />
         </div>
-
-        <Adsense height="h-[200px]" slot={CAT_ADS_ID} />
+        <div className="mt-8">
+          <Adsense height="h-[200px]" slot={CAT_ADS_ID} />
+        </div>
       </Layout>
     </>
   );

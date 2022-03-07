@@ -37,7 +37,7 @@ export default function List({ title, games, icon, cols, className }) {
       return (
         <>
           <ul
-            className={`grid ${setCol()} gap-3 py-3 px-6 sm:grid-cols-4 md:grid-cols-6 md:gap-6 xl:grid-cols-8 2xl:grid-cols-12`}
+            className={`relative z-20 grid ${setCol()} gap-3 py-3 px-6 sm:grid-cols-4 md:grid-cols-6 md:gap-6 xl:grid-cols-8 2xl:grid-cols-12`}
           >
             {gamesList}
           </ul>

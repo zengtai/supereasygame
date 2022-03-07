@@ -12,7 +12,7 @@ export default function Detail({ game }) {
           Play {game.title} on {SITE_NAME}
         </title>
       </Head>
-      <div className="flex flex-col items-center rounded-[2rem] border-8 border-sky-100 bg-white p-5 text-cyan-700 shadow-lg shadow-black/10 md:flex-row md:items-start">
+      <div className="flex flex-col items-center md:flex-row md:items-start">
         <div className="aspect-square h-24 w-24 shrink-0 md:h-40 md:w-40">
           <Image
             src={game.icon}
@@ -29,7 +29,7 @@ export default function Detail({ game }) {
           </h1>
           <p className="capitalize">
             <Link href={`/category/${game.category.toLowerCase()}`}>
-              <a className="rounded-md bg-lime-600/80 py-1 px-2 text-xs text-sky-100/90 shadow-md shadow-lime-500/30">
+              <a className="rounded-md bg-[#FF5321] py-1 px-2 text-xs text-white shadow-md shadow-[#FF532130]">
                 {game.category.toLowerCase()}
               </a>
             </Link>
@@ -43,7 +43,7 @@ export default function Detail({ game }) {
             </span>
             <span className="opacity-50">{game.played} played</span>
           </p>
-          <p className="py-3 text-left text-sm text-sky-800/80 md:text-sm">
+          <p className="py-3 text-left text-sm text-[#463838cc] md:text-sm">
             {game.description}
           </p>
         </div>
@@ -51,7 +51,7 @@ export default function Detail({ game }) {
       <p className="py-4 md:pt-4">
         <Link href={game.url}>
           <a
-            className="mx-auto block rounded-full bg-lime-500 p-3 text-center text-lg font-semibold text-white shadow-xl shadow-black/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:shadow-black/40 md:hover:delay-100 lg:p-4 lg:text-2xl"
+            className="mx-auto block rounded-full bg-lime-500 p-3 text-center text-lg font-semibold text-white shadow-xl shadow-lime-600/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:shadow-black/40 md:hover:delay-100 lg:p-4 lg:text-2xl"
             title={`Play ${game.title} now`}
           >
             PLAY NOW

@@ -42,20 +42,32 @@ export default function Navbar({ items, isOpen }) {
     <nav className="relative z-20 bg-[#fff9db] md:bg-transparent md:after:hidden">
       <div className="relative z-30 block">
         <Link href={`/`}>
-          <a className="shadow-[lg] absolute left-2 top-1 z-20 flex items-center justify-center rounded-[100%] p-1 text-cyan-800 shadow-stone-900 transition duration-500 ease-in-out md:top-5 md:left-3 md:h-16 md:w-16 md:bg-cyan-600 md:outline md:outline-4 md:outline-cyan-500 md:hover:scale-105 md:hover:bg-cyan-500">
+          <a className="shadow-[lg] absolute left-2 top-1 z-20 flex items-center justify-center rounded-[100%] p-1 text-cyan-800 shadow-stone-900 transition duration-500 ease-in-out md:top-5 md:left-3 md:h-16 md:w-16 md:bg-[#FF5321] md:outline md:outline-4 md:outline-[#FFB03A] md:hover:scale-105 md:hover:bg-[#FFB03A]">
             {/* {homeIcon()} */}
-            <Image
-              src="/brand/logo.png"
-              alt={SITE_NAME}
-              width={180}
-              height={36}
-              className="w-full"
-            />
+            <span className="md:hidden">
+              <Image
+                src="/brand/logo.png"
+                alt={SITE_NAME}
+                width={180}
+                height={36}
+                className="w-full"
+              />
+            </span>
+            <span className="hidden md:block md:h-10 md:w-10">
+              <Image
+                src="/brand/logo-sm.png"
+                alt={SITE_NAME}
+                width={36}
+                height={36}
+                className="w-full"
+                layout="responsive"
+              />
+            </span>
           </a>
         </Link>
         <button
           onClick={toggle}
-          className="ml-auto flex h-10 w-10 items-center justify-center text-[#463838] md:hidden"
+          className="my-2 ml-auto flex h-10 w-10 items-center justify-center text-[#463838] md:hidden"
         >
           {!isMenuOpen ? closeIcon() : menuIcon()}
         </button>

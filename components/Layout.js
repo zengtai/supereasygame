@@ -3,7 +3,7 @@ import Footer from "./Footer";
 
 function Layout({ children, items, isOpen }) {
   return (
-    <div className="flex min-h-screen flex-col bg-[#FFF9DB] text-sm text-white/80">
+    <div className="flex min-h-screen flex-col bg-[#FFF9DB] text-sm text-white/80 md:bg-[#FF5321]">
       <Navbar items={items} isOpen={isOpen} />
       {children}
       <Footer />

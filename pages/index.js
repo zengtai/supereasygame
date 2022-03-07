@@ -45,13 +45,13 @@ export default function Home({ games, newGames, featuredGames, categories }) {
           <title>{SITE_NAME} | Play Free Games Online</title>
         </Head>
         <div className="grow">
-          <div className="relative bg-orange-600 ">
-            <h2 className="relative z-10 flex items-center space-x-2 bg-[#FFB03A] p-4 font-semibold text-[#463838] before:absolute before:left-0 before:-top-6 before:-z-10 before:h-12 before:w-full before:skew-y-6 before:bg-[#FFF9DB] after:absolute after:left-0 after:-bottom-4 after:z-40 after:h-10 after:w-full after:-skew-y-6 after:bg-[#C84B26] md:text-lg">
+          <div className="relative bg-orange-600 md:bg-transparent">
+            <h2 className="relative z-10 flex items-center space-x-2 bg-[#FFB03A] p-4 font-semibold text-[#463838] before:absolute before:left-0 before:-top-6 before:-z-10 before:h-12 before:w-full before:skew-y-6 before:bg-[#FFF9DB] after:absolute after:left-0 after:-bottom-4 after:z-40 after:h-10 after:w-full after:-skew-y-6 after:bg-[#C84B26] md:bg-transparent md:text-lg md:before:hidden md:after:hidden">
               <span>{hotIcon()}</span>
               <span>Popular</span>
             </h2>
             <ul
-              className={`relative grid grid-cols-3 gap-3 bg-[#FF5321] py-3 px-6 before:absolute before:left-0 before:-top-4 before:z-40 before:h-10 before:w-full before:-skew-y-[4deg] before:bg-[#FF5321] after:absolute after:left-0 after:-bottom-4 after:z-40 after:h-10 after:w-full after:skew-y-[3deg] after:bg-[#FF5321] sm:grid-cols-4 md:grid-cols-6 md:gap-6 md:px-8 md:pb-8 xl:grid-cols-8 2xl:grid-cols-12`}
+              className={`relative grid grid-cols-3 gap-3 bg-[#FF5321] py-3 px-6 before:absolute before:left-0 before:-top-4 before:z-40 before:h-10 before:w-full before:-skew-y-[4deg] before:bg-[#FF5321] after:absolute after:left-0 after:-bottom-4 after:z-40 after:h-10 after:w-full after:skew-y-[3deg] after:bg-[#FF5321] sm:grid-cols-4 md:grid-cols-6 md:gap-6 md:px-8 md:pb-8 md:before:hidden md:after:hidden xl:grid-cols-8 2xl:grid-cols-12`}
             >
               <ListItem games={featuredGames} className="relative z-50" />
             </ul>
@@ -59,7 +59,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
           <div className="my-8">
             <Adsense height="h-[100px]" slot={HOME_ADS_ID} />
           </div>
-          <div className="relative bg-[#FF5321] before:absolute before:left-0 before:-top-3 before:z-10 before:h-10 before:w-full before:-skew-y-[3deg] before:bg-[#FF5321] after:absolute after:left-0 after:-bottom-3 after:z-0 after:h-10 after:w-full after:skew-y-[3deg] after:bg-[#FF5321]">
+          <div className="relative bg-[#FF5321] before:absolute before:left-0 before:-top-3 before:z-10 before:h-10 before:w-full before:-skew-y-[3deg] before:bg-[#FF5321] after:absolute after:left-0 after:-bottom-3 after:z-0 after:h-10 after:w-full after:skew-y-[3deg] after:bg-[#FF5321] md:before:hidden md:after:hidden">
             <List
               icon={topIcon()}
               games={newGames}
@@ -70,7 +70,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
           <div className="my-8">
             <Adsense height="h-[100px]" slot={HOME_ADS_ID} />
           </div>
-          <div className="relative bg-[#FF5321] before:absolute before:left-0 before:-top-3 before:z-10 before:h-10 before:w-full before:-skew-y-[3deg] before:bg-[#FF5321] after:absolute after:left-0 after:-bottom-3 after:z-0 after:h-10 after:w-full after:skew-y-[3deg] after:bg-[#FF5321]">
+          <div className="relative bg-[#FF5321] before:absolute before:left-0 before:-top-3 before:z-10 before:h-10 before:w-full before:-skew-y-[3deg] before:bg-[#FF5321] after:absolute after:left-0 after:-bottom-3 after:z-0 after:h-10 after:w-full after:skew-y-[3deg] after:bg-[#FF5321] md:before:hidden md:after:hidden">
             <h2 className="relative z-20 flex items-center space-x-2 px-4 pt-4 pb-0 font-semibold text-[#463838] md:text-lg">
               <span>{gameIcon()}</span>
               <span>All Games</span>
@@ -117,7 +117,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
           <div className="my-8">
             <Adsense height="h-[200px]" slot={HOME_ADS_ID} />
           </div>
-          <div className="relative bg-[#FF5321] before:absolute before:left-0 before:-top-3 before:z-10 before:h-10 before:w-full before:-skew-y-[3deg] before:bg-[#FF5321] after:absolute after:left-0 after:-bottom-3 after:z-0 after:h-10 after:w-full after:skew-y-[3deg] after:bg-[#FF5321]">
+          <div className="relative bg-[#FF5321] before:absolute before:left-0 before:-top-3 before:z-10 before:h-10 before:w-full before:-skew-y-[3deg] before:bg-[#FF5321] after:absolute after:left-0 after:-bottom-3 after:z-0 after:h-10 after:w-full after:skew-y-[3deg] after:bg-[#FF5321] md:before:hidden md:after:hidden">
             <Category
               icon={categoryIcon()}
               title="Categories"
