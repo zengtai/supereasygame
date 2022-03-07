@@ -28,7 +28,7 @@ export default function GamesListByCategory({ games, categories }) {
             {categoryName} Games
           </h1>
         </div>
-        <div className="relative z-20 grow bg-[#FF5321] before:absolute before:left-0 before:-top-3 before:z-10 before:h-10 before:w-full before:-skew-y-[3deg] before:bg-[#FF5321] after:absolute after:left-0 after:-bottom-3 after:z-0 after:h-10 after:w-full after:skew-y-[3deg] after:bg-[#FF5321] md:p-8 md:before:hidden md:after:hidden">
+        <div className="relative z-20 grow bg-[#FF5321] before:absolute before:left-0 before:-top-3 before:z-10 before:h-10 before:w-full before:-skew-y-[3deg] before:bg-[#FF5321] after:absolute after:left-0 after:-bottom-3 after:z-0 after:h-10 after:w-full after:skew-y-[3deg] after:bg-[#FF5321] md:bg-transparent md:p-8 md:before:hidden md:after:hidden">
           <List cols="3" games={games} />
         </div>
         <div className="mt-8">
