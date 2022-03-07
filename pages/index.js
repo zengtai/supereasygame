@@ -45,7 +45,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
           <title>{SITE_NAME} | Play Free Games Online</title>
         </Head>
         <div className="grow">
-          <div className="relative bg-orange-600 md:bg-transparent">
+          <div className="relative bg-orange-600 md:hidden md:bg-transparent">
             <h2 className="relative z-10 flex items-center space-x-2 bg-[#FFB03A] p-4 font-semibold text-[#463838] before:absolute before:left-0 before:-top-6 before:-z-10 before:h-12 before:w-full before:skew-y-6 before:bg-[#FFF9DB] after:absolute after:left-0 after:-bottom-4 after:z-40 after:h-10 after:w-full after:-skew-y-6 after:bg-[#C84B26] md:bg-transparent md:text-lg md:before:hidden md:after:hidden">
               <span>{hotIcon()}</span>
               <span>Popular</span>
@@ -56,7 +56,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
               <ListItem games={featuredGames} className="relative z-50" />
             </ul>
           </div>
-          <div className="my-8">
+          <div className="my-8 md:hidden">
             <Adsense height="h-[100px]" slot={HOME_ADS_ID} />
           </div>
           <div className="relative bg-[#FF5321] before:absolute before:left-0 before:-top-3 before:z-10 before:h-10 before:w-full before:-skew-y-[3deg] before:bg-[#FF5321] after:absolute after:left-0 after:-bottom-3 after:z-0 after:h-10 after:w-full after:skew-y-[3deg] after:bg-[#FF5321] md:before:hidden md:after:hidden">
@@ -67,7 +67,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
               cols="3"
             />
           </div>
-          <div className="my-8">
+          <div className="my-8 md:my-2">
             <Adsense height="h-[100px]" slot={HOME_ADS_ID} />
           </div>
           <div className="relative bg-[#FF5321] before:absolute before:left-0 before:-top-3 before:z-10 before:h-10 before:w-full before:-skew-y-[3deg] before:bg-[#FF5321] after:absolute after:left-0 after:-bottom-3 after:z-0 after:h-10 after:w-full after:skew-y-[3deg] after:bg-[#FF5321] md:before:hidden md:after:hidden">
@@ -114,7 +114,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
               </ul>
             </InfiniteScroll>
           </div>
-          <div className="my-8">
+          <div className="my-8 md:my-4">
             <Adsense height="h-[200px]" slot={HOME_ADS_ID} />
           </div>
           <div className="relative bg-[#FF5321] before:absolute before:left-0 before:-top-3 before:z-10 before:h-10 before:w-full before:-skew-y-[3deg] before:bg-[#FF5321] after:absolute after:left-0 after:-bottom-3 after:z-0 after:h-10 after:w-full after:skew-y-[3deg] after:bg-[#FF5321] md:before:hidden md:after:hidden">

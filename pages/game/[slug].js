@@ -30,7 +30,7 @@ export default function Games({
   return (
     <>
       <Layout items={categories}>
-        <div className="mb-6">
+        <div className="mb-6 md:mb-0">
           <Adsense height="h-[100px]" slot={DETAIL_ADS_ID} />
         </div>
 
@@ -66,7 +66,7 @@ export default function Games({
             </div>
           </div>
         </div>
-        <div className="mt-6">
+        <div className="mt-6 md:mt-0">
           <Adsense height="h-[200px]" slot={DETAIL_ADS_ID} />
         </div>
       </Layout>
