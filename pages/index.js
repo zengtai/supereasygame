@@ -21,7 +21,7 @@ import Category from "../components/Category";
 import ListItem from "../components/ListItem";
 
 export default function Home({ games, newGames, featuredGames, categories }) {
-  const initGames = games.slice(0, 24);
+  const initGames = games.slice(0, 12);
   const total = games.length;
 
   const [scrollGames, setScrollGames] = useState(initGames);
