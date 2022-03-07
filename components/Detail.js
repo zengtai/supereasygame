@@ -51,7 +51,7 @@ export default function Detail({ game }) {
       <p className="py-4 md:pt-4">
         <Link href={game.url}>
           <a
-            className="mx-auto block rounded-full bg-lime-500 p-3 text-center text-lg font-semibold text-white shadow-xl shadow-lime-600/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:shadow-black/40 md:hover:delay-100 lg:p-4 lg:text-2xl"
+            className="mx-auto block rounded-full bg-sky-500 p-3 text-center text-lg font-semibold text-white shadow-xl shadow-sky-600/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:shadow-sky-900/40 md:hover:delay-100 lg:p-4 lg:text-2xl"
             title={`Play ${game.title} now`}
           >
             PLAY NOW

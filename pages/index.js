@@ -7,6 +7,7 @@ import {
   gameIcon,
   categoryIcon,
   starIcon,
+  triIcon,
 } from "../components/Icons";
 import { getGames, getCategories } from "../lib/api";
 import Link from "next/link";
@@ -83,34 +84,70 @@ export default function Home({ games, newGames, featuredGames, categories }) {
               loader={<div className="my-2 text-center">Loading...</div>}
             >
               <ul className="relative z-20 grid grid-cols-4 gap-3 py-3 px-6 md:grid-cols-6 md:gap-6 xl:grid-cols-8 2xl:grid-cols-12">
-                {scrollGames.map((game) => (
-                  <li
-                    key={game.id}
-                    className="second:col-span-2 md:second:col-auto second:row-span-2 md:second:row-auto"
-                  >
-                    <Link href={`/game/${game.slug}`}>
-                      <a className="group md:delay-50 duration-400 relative block aspect-square overflow-hidden rounded-2xl shadow-md shadow-black/30 transition ease-in-out hover:shadow-lg hover:shadow-black/40 md:hover:origin-bottom md:hover:scale-110">
-                        <Image
-                          src={game.icon}
-                          alt={game.title}
-                          width={200}
-                          height={200}
-                          layout="responsive"
-                          className="bg-loading w-full bg-center bg-no-repeat"
-                        />
-                        <div className="absolute -bottom-[150%] hidden h-full w-full items-end justify-center text-center text-xs font-semibold group-hover:bg-gradient-to-t group-hover:from-black group-hover:to-black/0 sm:flex md:group-hover:bottom-0">
-                          <div className="h-auto w-full text-ellipsis p-2 text-center">
-                            <h3 className="leading-4">{game.title}</h3>
-                            <p className="flex flex-row items-center justify-center text-xl font-bold text-orange-500">
-                              {starIcon()}
-                              {game.stars}
-                            </p>
+                {scrollGames.map((game, index) => {
+                  return (index - 2) % 11 == 0 ? (
+                    <li
+                      key={game.id}
+                      className="md:second:col-auto col-span-2 row-span-2 md:row-auto"
+                    >
+                      <Link href={`/game/${game.slug}`}>
+                        <a className="group md:delay-50 duration-400 relative block aspect-square overflow-hidden rounded-2xl shadow-md shadow-black/30 transition ease-in-out hover:shadow-lg hover:shadow-black/40 md:hover:origin-bottom md:hover:scale-110">
+                          <Image
+                            src={game.icon}
+                            alt={game.title}
+                            width={200}
+                            height={200}
+                            layout="responsive"
+                            className="bg-loading w-full bg-center bg-no-repeat"
+                          />
+                          <div className="absolute bottom-0 flex h-full w-full items-end justify-center bg-gradient-to-t from-black to-black/0 text-center text-xs font-semibold md:-bottom-[150%] md:group-hover:bottom-0">
+                            <div className="h-auto w-full text-ellipsis p-2 text-center">
+                              <h3 className="text-sm leading-4">
+                                {game.title}
+                              </h3>
+                              <p className="flex flex-row items-center justify-center text-xl font-bold text-orange-500">
+                                {starIcon()}
+                                {game.stars}
+                              </p>
+                              <Link href={game.url}>
+                                <a className="mx-4 mt-2 flex items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 px-4 py-2 uppercase">
+                                  {triIcon()}
+                                </a>
+                              </Link>
+                            </div>
                           </div>
-                        </div>
-                      </a>
-                    </Link>
-                  </li>
-                ))}
+                        </a>
+                      </Link>
+                    </li>
+                  ) : (
+                    <li
+                      key={game.id}
+                      className="second:col-span-2 md:second:col-auto second:row-span-2 md:second:row-auto"
+                    >
+                      <Link href={`/game/${game.slug}`}>
+                        <a className="group md:delay-50 duration-400 relative block aspect-square overflow-hidden rounded-2xl shadow-md shadow-black/30 transition ease-in-out hover:shadow-lg hover:shadow-black/40 md:hover:origin-bottom md:hover:scale-110">
+                          <Image
+                            src={game.icon}
+                            alt={game.title}
+                            width={200}
+                            height={200}
+                            layout="responsive"
+                            className="bg-loading w-full bg-center bg-no-repeat"
+                          />
+                          <div className="absolute -bottom-[150%] hidden h-full w-full items-end justify-center text-center text-xs font-semibold group-hover:bg-gradient-to-t group-hover:from-black group-hover:to-black/0 sm:flex md:group-hover:bottom-0">
+                            <div className="h-auto w-full text-ellipsis p-2 text-center">
+                              <h3 className="leading-4">{game.title}</h3>
+                              <p className="flex flex-row items-center justify-center text-xl font-bold text-orange-500">
+                                {starIcon()}
+                                {game.stars}
+                              </p>
+                            </div>
+                          </div>
+                        </a>
+                      </Link>
+                    </li>
+                  );
+                })}
               </ul>
             </InfiniteScroll>
           </div>

@@ -21,7 +21,7 @@ export default function List({ title, games, icon, cols, className }) {
             className="bg-loading w-full bg-center bg-no-repeat"
             layout="responsive"
           />
-          <div className="-bottom-[150%] h-8 w-full items-end justify-center overflow-hidden text-ellipsis whitespace-nowrap bg-[#463838] text-center text-xs font-semibold group-hover:bg-gradient-to-t group-hover:from-black group-hover:to-black/0 sm:flex md:absolute md:hidden md:h-full md:group-hover:bottom-0">
+          <div className="-bottom-[150%] h-8 w-full items-end justify-center overflow-hidden text-ellipsis whitespace-nowrap bg-[#463838] text-center text-xs font-semibold group-hover:from-black sm:flex md:absolute md:h-full md:group-hover:bottom-0 md:group-hover:bg-transparent md:group-hover:bg-gradient-to-t md:group-hover:to-black/0">
             <div className="h-auto w-full p-2 text-center">
               <h3 className="overflow-hidden text-ellipsis leading-4">
                 {game.title}

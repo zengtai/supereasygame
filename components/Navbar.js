@@ -42,7 +42,7 @@ export default function Navbar({ items, isOpen }) {
     <nav className="relative z-20 bg-[#fff9db] md:bg-transparent md:after:hidden">
       <div className="relative z-30 block">
         <Link href={`/`}>
-          <a className="shadow-[lg] absolute left-2 top-1 z-20 flex items-center justify-center rounded-[100%] p-1 shadow-stone-900 transition duration-500 ease-in-out md:top-5 md:left-3 md:h-16 md:w-16 md:bg-[#FFB03A] md:outline md:outline-4 md:outline-[#FFB03A99] md:hover:scale-105 md:hover:bg-[#FFB03A]">
+          <a className="shadow-[lg] absolute left-2 top-1 z-20 flex items-center justify-center rounded-[100%] p-1 shadow-stone-900 transition duration-100 ease-in-out md:top-5 md:left-3 md:h-16 md:w-16 md:bg-[#FFB03A] md:outline md:outline-4 md:outline-[#FFB03A99] md:hover:scale-105 md:hover:bg-[#FFB03A]">
             {/* {homeIcon()} */}
             <span className="md:hidden">
               <Image
