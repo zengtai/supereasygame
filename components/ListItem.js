@@ -1,6 +1,5 @@
 import Link from "next/link";
 import Image from "./Image";
-import { FEATURED_GAMES } from "../lib/constants";
 import { iconFirst, iconSecond, iconThird } from "./Icons";
 
 const ListItem = ({ games, className }) => {
