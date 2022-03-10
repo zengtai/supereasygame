@@ -29,7 +29,7 @@ export default function Detail({ game }) {
           </h1>
           <p className="capitalize">
             <Link href={`/category/${game.category.toLowerCase()}`}>
-              <a className="rounded-md bg-[#FF5321] py-1 px-2 text-xs text-white shadow-md shadow-[#FF532130]">
+              <a className="rounded-md bg-lime-500 py-1 px-2 text-xs text-white shadow-md shadow-lime-500/10">
                 {game.category.toLowerCase()}
               </a>
             </Link>

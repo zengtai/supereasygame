@@ -1,3 +1,54 @@
+export const iconFirst = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="22"
+      fill="none"
+      viewBox="0 0 24 22"
+    >
+      <path
+        fill="#FFFA8B"
+        d="M0 19.684h24V22H0v-2.316zm0-16.21l6 3.473L12 0l6 6.947 6-3.473v13.894H0V3.474z"
+      ></path>
+    </svg>
+  );
+};
+
+export const iconSecond = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="22"
+      fill="none"
+      viewBox="0 0 24 22"
+    >
+      <path
+        fill="#DDF9FF"
+        d="M0 19.684h24V22H0v-2.316zm0-16.21l6 3.473L12 0l6 6.947 6-3.473v13.894H0V3.474z"
+      ></path>
+    </svg>
+  );
+};
+
+export const iconThird = () => {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="22"
+      fill="none"
+      viewBox="0 0 24 22"
+    >
+      <path
+        fill="#FFAF66"
+        d="M0 19.684h24V22H0v-2.316zm0-16.21l6 3.473L12 0l6 6.947 6-3.473v13.894H0V3.474z"
+      ></path>
+    </svg>
+  );
+};
+
 export const homeIcon = () => {
   return (
     <svg

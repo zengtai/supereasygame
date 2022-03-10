@@ -2,7 +2,7 @@ import { SITE_NAME } from "../lib/constants";
 import Link from "next/link";
 export default function Footer() {
   return (
-    <div className="mt-3 text-center text-xs text-yellow-900/60">
+    <div className="mt-3 text-center text-xs text-slate-900/60">
       <nav className="group space-x-5  p-3 shadow">
         <Link href={`/t/privacy-policy`}>
           <a>Privacy Policy</a>

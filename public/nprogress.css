@@ -35,17 +35,20 @@
   display: block;
   position: fixed;
   z-index: 1031;
-  top: 15px;
+  top: 50%;
   left: 50%;
-  margin-left: -9px;
+  transform: translate(-50%, -50%);
+  background: #00000050;
+  padding: 10px;
+  border-radius: 10px;
 }
 
 #nprogress .spinner-icon {
-  width: 18px;
-  height: 18px;
+  width: 48px;
+  height: 48px;
   box-sizing: border-box;
 
-  border: solid 2px transparent;
+  border: solid 4px transparent;
   border-top-color: #84cc16;
   border-left-color: #84cc16;
   border-radius: 50%;
@@ -55,9 +58,6 @@
 }
 
 @media (min-width: 768px) {
-  #nprogress .spinner {
-    top: 1px;
-  }
 }
 
 .nprogress-custom-parent {
