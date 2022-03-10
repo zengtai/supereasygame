@@ -12,7 +12,7 @@ export default function List({ title, games, icon, cols, className }) {
   const gamesList = games.map((game) => (
     <li key={game.id} className={className}>
       <Link href={`/game/${game.slug}`}>
-        <a className="group md:delay-50 duration-400 relative block overflow-hidden rounded-2xl shadow-md shadow-black/30 transition ease-in-out hover:shadow-lg hover:shadow-black/40 md:hover:origin-bottom md:hover:scale-110">
+        <a className="group md:delay-50 duration-400 relative block overflow-hidden rounded-2xl  shadow-md shadow-black/30 transition ease-in-out hover:shadow-lg hover:shadow-black/40 md:hover:origin-bottom md:hover:scale-110">
           <Image
             src={game.icon}
             alt={game.title}
@@ -21,13 +21,6 @@ export default function List({ title, games, icon, cols, className }) {
             className="bg-loading w-full bg-center bg-no-repeat"
             layout="responsive"
           />
-          <div className="text-ce -bottom-[150%] h-12 w-full items-end justify-center bg-[#463838] text-xs group-hover:from-black sm:flex md:absolute md:h-full md:group-hover:bottom-0 md:group-hover:bg-transparent md:group-hover:bg-gradient-to-t md:group-hover:to-black/0">
-            <div className="h-auto w-full p-2 text-center">
-              <h3 className="overflow-hidden text-ellipsis leading-4">
-                {game.title}
-              </h3>
-            </div>
-          </div>
         </a>
       </Link>
     </li>
