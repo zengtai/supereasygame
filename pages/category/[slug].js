@@ -23,7 +23,7 @@ export default function GamesListByCategory({ games, categories }) {
           </title>
         </Head>
 
-        <Adsense height="h-[100px]" slot={CAT_ADS_ID} />
+        {/* <Adsense height="h-[100px]" slot={CAT_ADS_ID} /> */}
 
         <div className="grow p-4 md:p-8">
           <h1 className="px-2 pb-2 text-center text-xl font-semibold capitalize text-sky-100 drop-shadow md:pb-3 md:text-3xl">
@@ -32,7 +32,7 @@ export default function GamesListByCategory({ games, categories }) {
           <List cols="4" games={games} />
         </div>
 
-        <Adsense height="h-[200px]" slot={CAT_ADS_ID} />
+        {/* <Adsense height="h-[200px]" slot={CAT_ADS_ID} /> */}
       </Layout>
     </>
   );

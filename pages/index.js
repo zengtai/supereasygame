@@ -53,7 +53,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
             />
           </div>
 
-          <Adsense height="h-[100px]" slot={HOME_ADS_ID} />
+          {/* <Adsense height="h-[100px]" slot={HOME_ADS_ID} /> */}
           <div className="px-6 md:px-8">
             <List
               icon={topIcon()}
@@ -63,7 +63,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
             />
           </div>
 
-          <Adsense height="h-[100px]" slot={HOME_ADS_ID} />
+          {/* <Adsense height="h-[100px]" slot={HOME_ADS_ID} /> */}
           <div className="px-6 md:px-8">
             <h2 className="flex items-center space-x-2 py-2 pb-0 font-semibold text-sky-100 drop-shadow md:text-lg">
               <span className="text-lime-400">{gameIcon()}</span>
@@ -108,7 +108,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
               </ul>
             </InfiniteScroll>
           </div>
-          <Adsense height="h-[200px]" slot={HOME_ADS_ID} />
+          {/* <Adsense height="h-[200px]" slot={HOME_ADS_ID} /> */}
           <div className="px-6">
             <Category
               icon={categoryIcon()}
