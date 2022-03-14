@@ -6,7 +6,7 @@ module.exports = {
   },
   // basePath: "/",
   reactStrictMode: true,
-  distDir: "build",
-  trailingSlash: true,
-  generateBuildId: () => "playgamemobi",
+  // distDir: "build", // 非静态部署
+  // trailingSlash: true, // 非静态部署
+  // generateBuildId: () => "playgamemobi", // 非静态部署
 };
