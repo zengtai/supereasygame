@@ -42,7 +42,7 @@ export default function Navbar({ items, isOpen }) {
     <nav className="relative bg-cyan-600 shadow-sm md:bg-transparent">
       <div className="relative z-10 block">
         <Link href={`/`}>
-          <a className="shadow-[lg] absolute -left-2 -top-2 z-20 flex h-16 w-16 items-center justify-center rounded-[100%] bg-cyan-600 p-3 text-cyan-800 shadow-stone-900 transition duration-500 ease-in-out md:top-5 md:left-3 md:h-16 md:w-16 md:bg-cyan-400 md:outline md:outline-[6px] md:hover:scale-105 md:hover:bg-cyan-300">
+          <a className="shadow-[lg] absolute -left-2 -top-2 z-20 flex h-16 w-16 items-center justify-center rounded-[100%] border-cyan-800 bg-cyan-600 p-2 text-cyan-800 shadow-stone-900 transition duration-500 ease-in-out md:top-5 md:left-3 md:h-16 md:w-16 md:border-[6px] md:bg-cyan-400 md:hover:scale-105 md:hover:border-4 md:hover:bg-cyan-300">
             {/* {homeIcon()} */}
             <Image
               src="/brand/logo-sm.png"
