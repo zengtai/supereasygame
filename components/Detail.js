@@ -34,7 +34,7 @@ export default function Detail({ game }) {
               </a>
             </Link>
           </p>
-          <p className="mt-3 flex flex-row items-center justify-center space-x-3 md:justify-start">
+          <p className="mt-2 flex flex-row items-center justify-center space-x-3 md:justify-start">
             <span className="text-2xl font-bold">
               <span className="flex flex-row items-center text-orange-500">
                 <span>{starIcon()}</span>

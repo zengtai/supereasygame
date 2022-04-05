@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "./Image";
-import { starIcon } from "./Icons";
+import ListItem from "./ListItem";
+
 export default function List({ title, games, icon, cols, className }) {
   const setCol = () => {
     if (cols == "2") return `grid-cols-2`;
@@ -37,7 +38,7 @@ export default function List({ title, games, icon, cols, className }) {
           <ul
             className={`grid ${setCol()} gap-3 py-3 sm:grid-cols-4 md:grid-cols-6 md:gap-6 xl:grid-cols-8 2xl:grid-cols-12`}
           >
-            {gamesList}
+            <ListItem games={games} className={className} />
           </ul>
         </>
       );
@@ -50,13 +51,8 @@ export default function List({ title, games, icon, cols, className }) {
           </h2>
           <ul
             className={`grid ${setCol()} gap-3 py-3 sm:grid-cols-4 md:grid-cols-6 md:gap-6 xl:grid-cols-8 2xl:grid-cols-12`}
-
-            // className={
-            //   setCol()
-            //     ? `grid grid-cols-${cols} sm:grid-cols-4 md:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-12 gap-3 p-2`
-            //     : `grid grid-cols-4 sm:grid-cols-4 md:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-12 gap-3 p-2`
           >
-            {gamesList}
+            <ListItem games={games} className={className} />
           </ul>
         </>
       );
