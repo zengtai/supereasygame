@@ -35,7 +35,7 @@ export default function Games({
         <div className="relative z-30 grow px-6 md:p-8">
           <div className="grid gap-3 md:gap-6 xl:grid-cols-12 xl:grid-rows-5">
             <div className="xl:col-span-8 xl:col-start-3 xl:row-span-3 xl:row-start-1">
-              <div className="flex flex-row space-x-2 pb-3 pt-4 drop-shadow md:pt-0">
+              <div className="flex flex-row space-x-2 pb-3 pt-5 drop-shadow md:pt-0">
                 <Link href={`/`}>Home</Link>
                 <span>/</span>
                 <Link href={`/category/${game.category.toLowerCase()}`}>

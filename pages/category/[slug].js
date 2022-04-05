@@ -27,7 +27,8 @@ export default function GamesListByCategory({ games, categories }) {
 
         <div className="grow p-4 md:p-8">
           <h1 className="px-2 pb-2 text-center text-xl font-semibold capitalize text-sky-100 drop-shadow md:pb-3 md:text-3xl">
-            {categoryName} Games
+            {categoryName} {games.length > 1 ? `Games` : `Game`}
+            <span className="text-lg"> ({games.length})</span>
           </h1>
           <List cols="4" games={games} />
         </div>

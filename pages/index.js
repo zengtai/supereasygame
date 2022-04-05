@@ -47,7 +47,9 @@ export default function Home({ games, newGames, featuredGames, categories }) {
           <div className="px-6 md:px-8">
             <h2 className="flex items-center space-x-2 py-2 pb-0 font-semibold text-sky-100 drop-shadow md:text-lg">
               <span className="text-lime-400">{gameIcon()}</span>
-              <span>All Games</span>
+              <span>
+                All Games <span>({total})</span>
+              </span>
             </h2>
             <InfiniteScroll
               style={{ overflow: "visible" }}
