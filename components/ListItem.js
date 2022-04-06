@@ -5,7 +5,10 @@ import { starIcon } from "./Icons";
 const ListItem = ({ type, games, className }) => {
   if (type && type == "card") {
     return games.map((game) => (
-      <li className="delay-50 transform duration-500 ease-in-out lg:hover:scale-110">
+      <li
+        key={game.id}
+        className="delay-50 transform duration-500 ease-in-out lg:hover:scale-110"
+      >
         <Link href={`/game/${game.slug}`} title={game.title}>
           <a className="flex flex-row overflow-hidden rounded-2xl bg-gradient-to-br from-cyan-600 to-cyan-700 shadow-lg">
             <div className="relative mr-3 aspect-square h-[100px] w-[100px] rounded-tl-2xl rounded-bl-2xl bg-[#00000010]">
