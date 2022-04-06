@@ -2,7 +2,8 @@ import ListItem from "./ListItem";
 
 export default function List({ title, games, icon, cols, className, type }) {
   const setCol = () => {
-    if (cols == "2") return `grid-cols-2`;
+    if (cols == "1") return `grid-cols-1`;
+    else if (cols == "4") return `grid-cols-4`;
     else if (cols == "3") return `grid-cols-3`;
     else if (cols == "5") return `grid-cols-5`;
     else return `grid-cols-4`;
@@ -13,7 +14,7 @@ export default function List({ title, games, icon, cols, className, type }) {
       return (
         <>
           <ul
-            className={`grid ${setCol()} h-full grid-cols-1 gap-4 overflow-visible py-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-8`}
+            className={`grid ${setCol()} h-full gap-4 overflow-visible py-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 xl:gap-8`}
           >
             <ListItem games={games} className={className} type={type} />
           </ul>
@@ -27,7 +28,7 @@ export default function List({ title, games, icon, cols, className, type }) {
             <span>{title}</span>
           </h2>
           <ul
-            className={`grid ${setCol()} h-full grid-cols-1 gap-4 overflow-visible py-4 md:grid-cols-3 xl:grid-cols-5 xl:gap-8`}
+            className={`grid ${setCol()} h-full gap-4 overflow-visible py-4 md:grid-cols-3 xl:grid-cols-5 xl:gap-8`}
           >
             <ListItem games={games} className={className} type={type} />
           </ul>
