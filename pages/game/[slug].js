@@ -93,6 +93,7 @@ export async function getStaticProps(context) {
       bottomGames: games.slice(22, 38),
       games,
     },
+    revalidate: 10,
   };
 }
 
