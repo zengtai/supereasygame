@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { closeIcon, menuIcon, homeIcon } from "./Icons";
+import { closeIcon, menuIcon } from "./Icons";
 import Image from "./Image";
 import { SITE_NAME } from "../lib/constants";
+import { getIcon } from "../lib/api";
 
 export default function Navbar({ items, isOpen }) {
   const router = useRouter();
@@ -30,8 +31,9 @@ export default function Navbar({ items, isOpen }) {
               category == current.slug
                 ? `bg-slate-50/10 opacity-80`
                 : `opacity-50`
-            } block p-2 text-white`}
+            } flex p-2 text-white`}
           >
+            <span className="mr-1">{getIcon(category)}</span>
             {category}
           </a>
         </Link>
