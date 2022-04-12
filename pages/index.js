@@ -58,7 +58,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
             </ul>
           </div>
           <div className="mt-8 md:hidden">
-            <Adsense slot={HOME_ADS_ID} height="h-[200px]" />
+            {/* <Adsense slot={HOME_ADS_ID} height="h-[200px]" /> */}
             <List
               icon={topIcon()}
               games={newGames}
@@ -67,19 +67,23 @@ export default function Home({ games, newGames, featuredGames, categories }) {
             />
           </div>
 
-          <Adsense slot={HOME_ADS_ID} />
+          {/* <Adsense slot={HOME_ADS_ID} /> */}
 
           <div className="mb-6 md:my-2">
             <h2 className="relative z-20 flex items-center space-x-2 px-4 pb-0 font-semibold text-[#463838] md:text-lg">
               <span>{gameIcon()}</span>
-              <span>All Games</span>
+              <span>All Games ({total})</span>
             </h2>
             <InfiniteScroll
               style={{ overflow: "visible" }}
               dataLength={scrollGames.length}
               next={getMoreGames}
               hasMore={hasMore}
-              loader={<div className="my-2 text-center">Loading...</div>}
+              loader={
+                <div className="my-2 text-center text-[#463838]">
+                  Loading...
+                </div>
+              }
             >
               <ul className="relative z-20 grid grid-cols-4 gap-3 py-3 px-6 md:grid-cols-6 md:gap-6 xl:grid-cols-8 2xl:grid-cols-12">
                 {scrollGames.map((game, index) => {
