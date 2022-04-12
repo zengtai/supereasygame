@@ -24,7 +24,7 @@ export default function GamesListByCategory({ games, categories }) {
         </Head>
         <div>
           {/* {games.length > 9 ? <Adsense slot={CAT_ADS_ID} /> : ``} */}
-          <h1 className="relative z-20 my-4 text-center text-xl font-semibold capitalize text-[#463838] md:text-3xl">
+          <h1 className="relative z-20 my-4 mb-6 text-center text-xl font-semibold capitalize text-[#463838] md:mb-4 md:text-3xl">
             {categoryName} {games.length > 1 ? `Games` : `Game`} ({games.length}
             )
           </h1>

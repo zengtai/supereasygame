@@ -43,7 +43,7 @@ export default function Navbar({ items, isOpen }) {
     <nav className="relative z-20 bg-[#fff9db] md:bg-transparent md:after:hidden">
       <div className="relative z-30 block">
         <Link href={`/`}>
-          <a className="shadow-[lg] absolute left-2 -top-2 z-20 flex items-center justify-center rounded-[100%] p-1 shadow-stone-900 transition duration-100 ease-in-out md:top-3 md:left-3 md:h-20 md:w-20 md:border-[#FFB03A99] md:bg-[#FFF9DB] md:hover:scale-105 md:hover:bg-[#FFF9DB]">
+          <a className="shadow-[lg] absolute left-2 -top-2 z-20 flex items-center justify-center rounded-[100%] p-1 shadow-stone-900 transition duration-200 ease-in-out md:top-4 md:left-3 md:h-20 md:w-20 md:border-[#FFB03A99] md:bg-[#FFF9DB] md:hover:scale-105 md:hover:bg-[#FFF9DB]">
             {/* {homeIcon()} */}
             <span className="md:hidden">
               <Image
@@ -54,7 +54,7 @@ export default function Navbar({ items, isOpen }) {
                 className="w-full"
               />
             </span>
-            <span className="hidden md:block md:h-14 md:w-14">
+            <span className="hidden md:block md:h-16 md:w-16">
               <Image
                 src={logoSm}
                 alt={SITE_NAME}
