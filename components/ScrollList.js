@@ -48,7 +48,7 @@ export default function ScrollList({
           loader={
             <div
               className="text-md m-3 mx-auto w-auto animate-pulse p-4 text-center"
-              onClick={getMoreGames}
+              onClick={getMoreGames()}
             >
               <span className="cursor-pointer rounded-lg bg-slate-200 p-4">
                 Load More

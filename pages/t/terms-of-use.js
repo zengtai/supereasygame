@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout";
-import { SITE_NAME, SITE_URL } from "../../lib/constants";
+import { SITE_NAME, SITE_URL, SITE_CONTACT } from "../../lib/constants";
 import { getCategories } from "../../lib/api";
 export default function Terms({ categories }) {
   return (
@@ -503,7 +503,7 @@ export default function Terms({ categories }) {
           </p>
           <h2 className="text-md my-3 font-bold">Contact Information</h2>
           <p className="my-2">Address: Singapore</p>
-          <p className="my-2">Email: contact@{SITE_NAME}.com</p>
+          <p className="my-2">Email: {SITE_CONTACT}</p>
         </div>
       </Layout>
     </>
