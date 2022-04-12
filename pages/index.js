@@ -57,20 +57,11 @@ export default function Home({ games, newGames, featuredGames, categories }) {
               <ListItem games={featuredGames} className="relative z-50" />
             </ul>
           </div>
-          <div className="mt-8 md:hidden">
-            {/* <Adsense slot={HOME_ADS_ID} height="h-[200px]" /> */}
-            <List
-              icon={topIcon()}
-              games={newGames}
-              title="New Games"
-              cols="3"
-            />
-          </div>
 
           {/* <Adsense slot={HOME_ADS_ID} /> */}
 
-          <div className="mb-6 md:my-2">
-            <h2 className="relative z-20 flex items-center space-x-2 px-4 pb-0 font-semibold text-[#463838] md:text-lg">
+          <div className="mt-8 mb-6 md:my-2">
+            <h2 className="relative z-20 flex items-center space-x-2 px-4 pb-0 font-semibold text-[#463838] md:px-8 md:text-lg">
               <span>{gameIcon()}</span>
               <span>All Games ({total})</span>
             </h2>
@@ -85,7 +76,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
                 </div>
               }
             >
-              <ul className="relative z-20 grid grid-cols-4 gap-3 py-3 px-6 md:grid-cols-6 md:gap-6 xl:grid-cols-8 2xl:grid-cols-12">
+              <ul className="relative z-20 grid grid-cols-4 gap-3 py-3 px-6 md:grid-cols-6 md:gap-6 md:px-8 xl:grid-cols-8 2xl:grid-cols-12">
                 {scrollGames.map((game, index) => {
                   return (index - 2) % 11 == 0 ? (
                     <li
@@ -111,11 +102,10 @@ export default function Home({ games, newGames, featuredGames, categories }) {
                                 {starIcon()}
                                 {game.stars}
                               </p>
-                              <Link href={game.url}>
-                                <a className="mx-4 mt-2 flex items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 px-4 py-2 uppercase md:hidden">
-                                  {triIcon()}
-                                </a>
-                              </Link>
+
+                              <div className="mx-4 mt-2 flex items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 px-4 py-2 uppercase md:hidden">
+                                {triIcon()}
+                              </div>
                             </div>
                           </div>
                         </a>

@@ -31,7 +31,7 @@ export default function List({ title, games, icon, cols, className }) {
       return (
         <>
           <ul
-            className={`relative z-20 grid ${setCol()} gap-3 py-3 px-6 sm:grid-cols-4 md:grid-cols-6 md:gap-6 xl:grid-cols-8 2xl:grid-cols-12`}
+            className={`relative z-20 grid ${setCol()} gap-3 sm:grid-cols-4 md:grid-cols-6 md:gap-6 xl:grid-cols-8 2xl:grid-cols-12`}
           >
             <ListItem games={games} />
           </ul>
@@ -45,7 +45,7 @@ export default function List({ title, games, icon, cols, className }) {
             <span>{title}</span>
           </h2>
           <ul
-            className={`relative z-20 grid ${setCol()} gap-3 py-3 px-6 sm:grid-cols-4 md:grid-cols-6 md:gap-6 md:px-8 md:pb-8 xl:grid-cols-8 2xl:grid-cols-12`}
+            className={`relative z-20 grid ${setCol()} gap-3 sm:grid-cols-4 md:grid-cols-6 md:gap-6 md:px-8 md:pb-8 xl:grid-cols-8 2xl:grid-cols-12`}
           >
             <ListItem games={games} />
           </ul>
