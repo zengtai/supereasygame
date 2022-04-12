@@ -23,18 +23,13 @@ const ListItem = ({ games, className }) => {
             className="bg-loading w-full bg-center bg-no-repeat"
             layout="responsive"
           />
-          <div className="absolute bottom-0 flex h-full w-full items-end justify-center bg-gradient-to-t from-black to-black/0 text-center text-xs font-semibold md:-bottom-[150%] md:group-hover:bottom-0">
+          <div className="absolute -bottom-[150%] hidden h-full w-full items-end justify-center text-center text-xs font-semibold group-hover:bg-gradient-to-t group-hover:from-black group-hover:to-black/0 sm:flex md:group-hover:bottom-0">
             <div className="h-auto w-full text-ellipsis p-2 text-center">
-              <h3 className="text-sm leading-4">{game.title}</h3>
+              <h3 className="leading-4">{game.title}</h3>
               <p className="flex flex-row items-center justify-center text-xl font-bold text-orange-500">
                 {starIcon()}
                 {game.stars}
               </p>
-              <Link href={game.url}>
-                <a className="mx-4 mt-2 flex items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 px-4 py-2 uppercase md:hidden">
-                  {triIcon()}
-                </a>
-              </Link>
             </div>
           </div>
         </a>
