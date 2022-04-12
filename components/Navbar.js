@@ -3,6 +3,9 @@ import { useState } from "react";
 import { useRouter } from "next/router";
 import { closeIcon, menuIcon } from "./Icons";
 import Image from "./Image";
+import logo from "../public/brand/logo.png";
+import logoSm from "../public/brand/logo-sm.png";
+
 import { SITE_NAME } from "../lib/constants";
 import { getIcon } from "../lib/api";
 
@@ -18,20 +21,16 @@ export default function Navbar({ items, isOpen }) {
   const categoryNav = items.map((category) => {
     return (
       <li
-        className={`${
-          category == current.slug
-            ? `border-slate-50/80 bg-slate-50/20 md:bg-slate-50/10 md:shadow-lg`
-            : `border-slate-50/20 bg-slate-50/10 md:border-slate-50/0 md:shadow-none`
-        } m-1 rounded-xl border-2 transition duration-500 ease-in-out hover:bg-slate-50/10 md:bg-slate-50/0`}
+        className={`basis-1/2 transition duration-500 ease-in-out sm:basis-1/4 md:basis-[auto] md:bg-slate-50/0`}
         key={category}
       >
         <Link href={`/category/${category}`}>
           <a
             className={`${
               category == current.slug
-                ? `bg-slate-50/10 opacity-80`
-                : `opacity-50`
-            } flex p-2 text-white`}
+                ? `border-slate-50/80 bg-slate-50/10  opacity-80 md:shadow-lg`
+                : `border-slate-50/20 opacity-50 md:shadow-none`
+            } m-2 flex rounded-xl border-2 p-2 text-white hover:bg-slate-50/10 `}
           >
             <span className="mr-1">{getIcon(category)}</span>
             {category}
@@ -48,7 +47,7 @@ export default function Navbar({ items, isOpen }) {
             {/* {homeIcon()} */}
             <span className="md:hidden">
               <Image
-                src="/brand/logo.png"
+                src={logo}
                 alt={SITE_NAME}
                 width={173}
                 height={54}
@@ -57,7 +56,7 @@ export default function Navbar({ items, isOpen }) {
             </span>
             <span className="hidden md:block md:h-14 md:w-14">
               <Image
-                src="/brand/logo-sm.png"
+                src={logoSm}
                 alt={SITE_NAME}
                 width={60}
                 height={60}
