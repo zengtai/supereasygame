@@ -30,11 +30,11 @@ export default function Games({
   return (
     <>
       <Layout items={categories}>
-        <div className="mb-6 md:mb-0">
+        {/* <div className="mb-6 md:mb-0">
           <Adsense height="h-[100px]" slot={DETAIL_ADS_ID} />
-        </div>
+        </div> */}
 
-        <div className="relative z-30 grow">
+        <div className="relative z-30 mt-6 grow md:mt-0">
           <div className="relative z-30 grid grow gap-3 bg-[#FF5321] p-4 before:absolute before:left-0 before:-top-3 before:z-10 before:h-10 before:w-full before:-skew-y-[3deg] before:bg-[#FF5321] after:absolute after:left-0 after:-bottom-3 after:z-0 after:h-10 after:w-full after:skew-y-[3deg] after:bg-[#FF5321] md:gap-6 md:bg-transparent md:p-8 md:before:hidden md:after:hidden xl:grid-cols-12 xl:grid-rows-5">
             <div className="relative z-30 rounded-xl bg-white p-5 text-[#463838] shadow-lg shadow-black/10 xl:col-span-8 xl:col-start-3 xl:row-span-3 xl:row-start-1">
               <div className="flex origin-left scale-90 flex-row space-x-2 pb-4 text-sm text-[#463838]">

@@ -42,23 +42,23 @@ export default function Navbar({ items, isOpen }) {
     <nav className="relative z-20 bg-[#fff9db] md:bg-transparent md:after:hidden">
       <div className="relative z-30 block">
         <Link href={`/`}>
-          <a className="shadow-[lg] absolute left-2 top-1 z-20 flex items-center justify-center rounded-[100%] p-1 shadow-stone-900 transition duration-100 ease-in-out md:top-5 md:left-3 md:h-16 md:w-16 md:bg-[#FFB03A] md:outline md:outline-4 md:outline-[#FFB03A99] md:hover:scale-105 md:hover:bg-[#FFB03A]">
+          <a className="shadow-[lg] absolute left-2 -top-2 z-20 flex items-center justify-center rounded-[100%] p-1 shadow-stone-900 transition duration-100 ease-in-out md:top-3 md:left-3 md:h-20 md:w-20 md:border-[#FFB03A99] md:bg-[#FFF9DB] md:hover:scale-105 md:hover:bg-[#FFF9DB]">
             {/* {homeIcon()} */}
             <span className="md:hidden">
               <Image
                 src="/brand/logo.png"
                 alt={SITE_NAME}
-                width={180}
-                height={36}
+                width={173}
+                height={54}
                 className="w-full"
               />
             </span>
-            <span className="hidden md:block md:h-10 md:w-10">
+            <span className="hidden md:block md:h-14 md:w-14">
               <Image
                 src="/brand/logo-sm.png"
                 alt={SITE_NAME}
-                width={36}
-                height={36}
+                width={60}
+                height={60}
                 className="w-full"
                 layout="responsive"
               />
