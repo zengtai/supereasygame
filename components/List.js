@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "./Image";
+import ListItem from "./ListItem";
 
 export default function List({ title, games, icon, cols, className }) {
   const setCol = () => {
@@ -32,7 +33,7 @@ export default function List({ title, games, icon, cols, className }) {
           <ul
             className={`relative z-20 grid ${setCol()} gap-3 py-3 px-6 sm:grid-cols-4 md:grid-cols-6 md:gap-6 xl:grid-cols-8 2xl:grid-cols-12`}
           >
-            {gamesList}
+            <ListItem games={games} />
           </ul>
         </>
       );
@@ -46,7 +47,7 @@ export default function List({ title, games, icon, cols, className }) {
           <ul
             className={`relative z-20 grid ${setCol()} gap-3 py-3 px-6 sm:grid-cols-4 md:grid-cols-6 md:gap-6 md:px-8 md:pb-8 xl:grid-cols-8 2xl:grid-cols-12`}
           >
-            {gamesList}
+            <ListItem games={games} />
           </ul>
         </>
       );

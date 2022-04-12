@@ -112,7 +112,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
                                 {game.stars}
                               </p>
                               <Link href={game.url}>
-                                <a className="mx-4 mt-2 flex items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 px-4 py-2 uppercase">
+                                <a className="mx-4 mt-2 flex items-center justify-center rounded-full bg-gradient-to-r from-orange-500 to-yellow-400 px-4 py-2 uppercase md:hidden">
                                   {triIcon()}
                                 </a>
                               </Link>

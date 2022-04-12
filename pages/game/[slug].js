@@ -41,7 +41,12 @@ export default function Games({
                 <Link href={`/`}>Home</Link>
                 <span className="opacity-50">/</span>
                 <Link href={`/category/${game.category.toLowerCase()}`}>
-                  <a title={game.category}>{game.category}</a>
+                  <a title={game.category}>
+                    {game.category.replace(
+                      game.category[0],
+                      game.category[0].toUpperCase()
+                    )}
+                  </a>
                 </Link>
                 <span className="opacity-50">/</span>
                 <span className="opacity-50">{game.title}</span>
