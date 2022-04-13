@@ -7,6 +7,8 @@ import "../styles/globals.css";
 import "../public/nprogress.css";
 import Head from "next/head";
 
+import favicon from "../public/brand/favicon.png";
+
 function MyApp({ Component, pageProps }) {
   const router = useRouter();
   useEffect(() => {
@@ -60,7 +62,7 @@ function MyApp({ Component, pageProps }) {
         />
         <link
           rel="icon"
-          href="brand/favicon.png"
+          href="./brand/favicon.png"
           sizes="any"
           type="image/png"
         />
