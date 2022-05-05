@@ -170,6 +170,6 @@ export const getStaticProps = async () => {
       featuredGames,
       categories,
     },
-    revalidate: 10,
+    revalidate: 6000,
   };
 };
