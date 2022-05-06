@@ -5,6 +5,7 @@ export const toTitle = (name) =>
   name
     .replace(/([A-Z])/g, " $1")
     .trim()
+    .replace(/(a-zA-Z)(0-9)/, "$1 $2")
     .replace(/3 D/g, " 3D");
 
 // 生成模拟数据
