@@ -33,7 +33,7 @@ export default function Games({
         {/* <Adsense height="h-[100px]" slot={DETAIL_ADS_ID} /> */}
 
         <div className="relative z-30 grow px-6 md:p-8">
-          <div className="grid gap-3 md:gap-6 xl:grid-cols-12 xl:grid-rows-5">
+          <div className="grid gap-3 md:gap-8 xl:grid-cols-12 xl:grid-rows-5">
             <div className="xl:col-span-8 xl:col-start-3 xl:row-span-3 xl:row-start-1">
               <div className="flex flex-row space-x-2 pb-3 pt-5 drop-shadow md:pt-0">
                 <Link href={`/`}>Home</Link>
@@ -58,7 +58,7 @@ export default function Games({
               <AsideGameList games={rightGames} />
             </div>
             <div className="flex items-end xl:col-span-8 xl:col-start-3 xl:row-span-2 xl:row-start-4">
-              <ul className="grid w-full grid-cols-5 gap-3 md:grid-cols-10 md:gap-6 xl:grid-cols-8">
+              <ul className="grid w-full grid-cols-5 gap-3 md:grid-cols-10 md:gap-8 xl:grid-cols-8">
                 <ListItem games={bottomGames} />
               </ul>
             </div>

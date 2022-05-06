@@ -30,7 +30,7 @@ export default function GamesListByCategory({ games, categories }) {
             {categoryName} {games.length > 1 ? `Games` : `Game`}
             <span className="text-lg"> ({games.length})</span>
           </h1>
-          <List cols="4" games={games} />
+          <List cols="1" games={games} type="card" />
         </div>
 
         {/* <Adsense height="h-[200px]" slot={CAT_ADS_ID} /> */}

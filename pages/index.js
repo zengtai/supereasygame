@@ -58,8 +58,9 @@ export default function Home({ games, newGames, featuredGames, categories }) {
               hasMore={hasMore}
               loader={<div className="my-2 text-center">Loading...</div>}
             >
-              <ul className="grid grid-cols-4 gap-3 py-3 md:grid-cols-6 md:gap-6 xl:grid-cols-8 2xl:grid-cols-12">
+              <ul className="grid h-full grid-cols-1 gap-4 overflow-visible py-4 md:grid-cols-3 xl:grid-cols-5 xl:gap-8">
                 <ListItem
+                  type="card"
                   games={scrollGames}
                   className={`second:col-span-2 md:second:col-auto second:row-span-2 md:second:row-auto`}
                 />
