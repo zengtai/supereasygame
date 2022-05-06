@@ -14,7 +14,7 @@ export default function Footer() {
       </nav>
       <div className="pb-7 leading-5 opacity-90 md:pt-3">
         <div className="relative mx-auto mb-2 h-[40px] w-[128px]">
-          <Image src={`/brand/logo.png`} layout="fill" />
+          <Image src={`/brand/logo.png`} alt={SITE_NAME} layout="fill" />
         </div>
         Copyright &copy; {new Date().getFullYear()} {SITE_NAME}
         <br />

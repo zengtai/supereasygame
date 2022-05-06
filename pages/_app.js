@@ -1,7 +1,8 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Script from "next/script";
-import * as gtag from "../lib/gtag";
+import gtag from "../lib/gtag";
+// import * as gtag from "../lib/gtag";
 import NProgress from "nprogress";
 import "../styles/globals.css";
 import "../public/nprogress.css";
