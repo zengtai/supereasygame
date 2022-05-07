@@ -52,6 +52,7 @@ export default function Navbar({ items, isOpen }) {
                 width={173}
                 height={54}
                 className="w-full"
+                priority
               />
             </span>
             <span className="hidden md:block md:h-16 md:w-16">
@@ -62,6 +63,7 @@ export default function Navbar({ items, isOpen }) {
                 height={60}
                 className="w-full"
                 layout="responsive"
+                priority
               />
             </span>
           </a>
