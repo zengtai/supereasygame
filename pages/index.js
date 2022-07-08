@@ -41,7 +41,15 @@ export default function Home({ games, newGames, featuredGames, categories }) {
     <>
       <Layout items={categories}>
         <Head>
-          <title>{`${SITE_META.name} | Play Free Games Online`}</title>
+          <title>{`${SITE_META.name} : Free Online Games to Play`}</title>
+          <meta
+            name="description"
+            content="Come to Supereasy Game to play the newest online casual games for free!"
+          />
+          <meta
+            name="keywords"
+            content={`supereasy game, supereasy games, instant games, easy game, free online games, casual games, flash games, browser games, free games to play, arcade games, pc games download, online games for pc, best online games, free games for pc, play games online`}
+          />
         </Head>
         <div className="relative z-30 grow py-4">
           <div className="px-6 md:px-8">

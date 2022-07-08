@@ -21,9 +21,6 @@ export default function Detail({ game }) {
   // };
   return (
     <>
-      <Head>
-        <title>{`Play ${game.title} on ${SITE_META.name}`}</title>
-      </Head>
       <div className="flex flex-col items-center rounded-[2rem] border-8 border-sky-100 bg-white p-5 text-cyan-700 shadow-lg shadow-black/10 md:flex-row md:items-start">
         <div className="aspect-square h-24 w-24 shrink-0 md:h-40 md:w-40">
           <Image

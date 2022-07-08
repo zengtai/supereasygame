@@ -5,8 +5,9 @@ import Detail from "../../components/Detail";
 import ListItem from "../../components/ListItem";
 import Link from "next/link";
 import Banner from "../../components/Banner";
-import { ADS_SLOT_ID } from "../../lib/constants";
+import { ADS_SLOT_ID, SITE_META } from "../../lib/constants";
 import { sparklesIcon } from "../../components/Icons";
+import Head from "next/head";
 
 export default function Games({
   game,
@@ -30,6 +31,16 @@ export default function Games({
   return (
     <>
       <Layout items={categories}>
+        <Head>
+          <title>
+            {`${game.title} by ${SITE_META.name} : Free Online Games to Play`}
+          </title>
+          <meta name="description" content={game.description} />
+          <meta
+            name="keywords"
+            content={`${game.title.toLowerCase()}, instant games, easy game, free online games, flash games, casual games,, browser games, free games to play, arcade games, pc games download, online games for pc, best online games, free games for pc, play games online`}
+          />
+        </Head>
         <Banner
           className={`banner mt-4`}
           style={{ display: "block" }}

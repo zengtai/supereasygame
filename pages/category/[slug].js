@@ -20,7 +20,7 @@ export default function GamesListByCategory({ games, categories }) {
       <Layout items={categories}>
         <Head>
           <title>
-            {`${categoryName} Games | Play ${categoryName} Games on ${SITE_META.name}`}
+            {`${categoryName} Games by ${SITE_META.name} : Free Online Games to Play`}
           </title>
         </Head>
 
