@@ -24,6 +24,10 @@ export default function List({ title, games, icon, cols, className }) {
           <div className="absolute -bottom-[150%] hidden h-full w-full items-end justify-center text-center text-xs font-semibold group-hover:bg-gradient-to-t group-hover:from-black group-hover:to-black/0 sm:flex md:group-hover:bottom-0">
             <div className="h-auto w-full text-ellipsis p-2 text-center">
               <h3 className="leading-4">{game.title}</h3>
+              <p className="flex flex-row items-center justify-center text-xl font-bold text-orange-500">
+                {starIcon()}
+                {game.stars}
+              </p>
             </div>
           </div>
         </a>

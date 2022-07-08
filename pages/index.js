@@ -8,13 +8,13 @@ import {
   categoryIcon,
   starIcon,
 } from "../components/Icons";
-import { getGames, getCategories } from "../lib/api";
+import { getGames } from "../lib/api";
 import Link from "next/link";
 import Image from "../components/Image";
 import Layout from "../components/Layout";
-import { SITE_META, HOME_ADS_ID } from "../lib/constants";
+import { SITE_META, ADS_SLOT_ID, FEATURED_GAMES } from "../lib/constants";
 import List from "../components/List";
-import Adsense from "../components/Adsense";
+import Banner from "../components/Banner";
 import InfiniteScroll from "react-infinite-scroll-component";
 import Category from "../components/Category";
 
@@ -53,7 +53,12 @@ export default function Home({ games, newGames, featuredGames, categories }) {
             />
           </div>
 
-          <Adsense height="h-[100px]" slot={HOME_ADS_ID} />
+          <Banner
+            className={`banner`}
+            style={{ display: "block" }}
+            slot={ADS_SLOT_ID.home}
+            responsive="false"
+          />
           <div className="px-6 md:px-8">
             <List
               icon={topIcon()}
@@ -63,7 +68,12 @@ export default function Home({ games, newGames, featuredGames, categories }) {
             />
           </div>
 
-          <Adsense height="h-[100px]" slot={HOME_ADS_ID} />
+          <Banner
+            className={`banner`}
+            style={{ display: "block" }}
+            slot={ADS_SLOT_ID.home}
+            responsive="false"
+          />
           <div className="px-6 md:px-8">
             <h2 className="flex items-center space-x-2 py-2 pb-0 font-semibold text-sky-100 drop-shadow md:text-lg">
               <span className="text-lime-400">{gameIcon()}</span>
@@ -108,7 +118,12 @@ export default function Home({ games, newGames, featuredGames, categories }) {
               </ul>
             </InfiniteScroll>
           </div>
-          <Adsense height="h-[200px]" slot={HOME_ADS_ID} />
+          <Banner
+            className={`banner`}
+            style={{ display: "block" }}
+            slot={ADS_SLOT_ID.home}
+            responsive="false"
+          />
           <div className="px-6">
             <Category
               icon={categoryIcon()}
@@ -124,14 +139,17 @@ export default function Home({ games, newGames, featuredGames, categories }) {
 
 export const getStaticProps = async () => {
   // const games = await getGames();
-  const games = await getGames();
-  const newGames = await getGames("LATEST", 10);
-  const featuredGames = await getGames("FEATURED_GAMES");
-  const categories = await getCategories();
+  const data = await getGames();
+  const games = data.basicData;
+  const newGames = games.slice(0, 10);
+  const featuredGames = games.filter((item) =>
+    FEATURED_GAMES.includes(item.name)
+  );
+  const categories = data.categories;
 
   return {
     props: {
-      games,
+      games: games.reverse(),
       newGames,
       featuredGames,
       categories,

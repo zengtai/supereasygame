@@ -3,14 +3,26 @@ import Link from "next/link";
 import Head from "next/head";
 import { SITE_META } from "../lib/constants";
 import { starIcon } from "./Icons";
+import { useState } from "react";
 
 export default function Detail({ game }) {
+  const [isShowAll, setIsShowAll] = useState(false);
+  function toggle() {
+    setIsShowAll(!isShowAll);
+  }
+
+  // const handleClick = () => {
+  //   if (typeof window !== "undefined") {
+  //     let currentPlayedGames =
+  //       JSON.parse(localStorage.getItem("playedGames")) || [];
+  //     currentPlayedGames.push(game.slug);
+  //     localStorage.setItem("playedGames", JSON.stringify(currentPlayedGames));
+  //   }
+  // };
   return (
     <>
       <Head>
-        <title>
-          {`Play ${game.title} on ${SITE_META.name}`}
-        </title>
+        <title>{`Play ${game.title} on ${SITE_META.name}`}</title>
       </Head>
       <div className="flex flex-col items-center rounded-[2rem] border-8 border-sky-100 bg-white p-5 text-cyan-700 shadow-lg shadow-black/10 md:flex-row md:items-start">
         <div className="aspect-square h-24 w-24 shrink-0 md:h-40 md:w-40">
@@ -44,13 +56,22 @@ export default function Detail({ game }) {
             <span className="opacity-50">{game.played} played</span>
           </p>
           <p className="py-3 text-left text-sm text-sky-800/80 md:text-sm">
-            {game.description}
+            <div
+              onClick={toggle}
+              className={`
+            ${
+              isShowAll ? `h-auto` : `max-h-16`
+            } relative w-full overflow-hidden text-ellipsis py-3 text-slate-500 after:absolute after:left-0 after:bottom-0 after:h-5 after:w-full after:bg-gradient-to-t after:from-white after:to-white/0`}
+            >
+              {game.description}
+            </div>
           </p>
         </div>
       </div>
       <p className="py-4 md:pt-4">
         <Link href={game.url}>
           <a
+            // onClick={handleClick}
             className="mx-auto block rounded-full bg-lime-500 p-3 text-center text-lg font-semibold text-white shadow-xl shadow-black/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:shadow-black/40 md:hover:delay-100 lg:p-4 lg:text-2xl"
             title={`Play ${game.title} now`}
           >

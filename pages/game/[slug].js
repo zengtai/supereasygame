@@ -4,8 +4,8 @@ import { getCategories, getGames } from "../../lib/api";
 import Detail from "../../components/Detail";
 import ListItem from "../../components/ListItem";
 import Link from "next/link";
-import Adsense from "../../components/Adsense";
-import { DETAIL_ADS_ID } from "../../lib/constants";
+import Banner from "../../components/Banner";
+import { ADS_SLOT_ID } from "../../lib/constants";
 import { sparklesIcon } from "../../components/Icons";
 
 export default function Games({
@@ -30,7 +30,12 @@ export default function Games({
   return (
     <>
       <Layout items={categories}>
-        <Adsense height="h-[100px]" slot={DETAIL_ADS_ID} />
+        <Banner
+          className={`banner mt-4`}
+          style={{ display: "block" }}
+          slot={ADS_SLOT_ID.detail}
+          responsive="false"
+        />
 
         <div className="relative z-30 grow px-6 md:p-8">
           <div className="grid gap-3 md:gap-6 xl:grid-cols-12 xl:grid-rows-5">
@@ -65,39 +70,38 @@ export default function Games({
           </div>
         </div>
 
-        <Adsense height="h-[200px]" slot={DETAIL_ADS_ID} />
+        <Banner
+          className={`banner mt-4`}
+          style={{ display: "block" }}
+          slot={ADS_SLOT_ID.detail}
+          responsive="false"
+        />
       </Layout>
     </>
   );
 }
 
 export async function getStaticProps(context) {
-  let games = await getGames();
-  const categories = await getCategories();
-  let game = games.filter((game) => game.slug == `${context.params.slug}`);
-  // console.log(game);
-  const currentGameIndex = games.findIndex(
-    (game) => game.slug == `${context.params.slug}`
+  let data = await getGames();
+  let game = data.games.filter((game) => game.slug == context.params.slug);
+  const categories = data.categories;
+  let relatedGames = data.basicData.filter(
+    (game) => game.slug !== context.params.slug
   );
-  // console.log(currentGameIndex);
-  games.splice(currentGameIndex, 1);
-  games.sort(function (a, b) {
-    return Date.parse(a.time) > Date.parse(b.time) ? 1 : -1;
-  });
+
   return {
     props: {
       game: game[0],
       categories,
-      rightGames: games.slice(0, 12),
-      leftGames: games.slice(13, 25),
-      bottomGames: games.slice(26, 42),
-      games,
+      leftGames: relatedGames.slice(0, 10),
+      rightGames: relatedGames.slice(10, 20),
+      bottomGames: relatedGames.slice(20, 36),
     },
   };
 }
 
 export const getStaticPaths = async () => {
-  const games = await getGames();
+  const games = await getGames().then((res) => res.basicData);
   const paths = games.map((game) => ({
     params: {
       slug: game.slug,

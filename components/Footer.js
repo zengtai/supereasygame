@@ -12,7 +12,8 @@ export default function Footer() {
         </Link>
       </nav>
       <p className="py-7 text-sky-200/50">
-        Copyright &copy; {SITE_META.name}. All Rights Reserved
+        Copyright &copy; {new Date().getFullYear()} {SITE_META.name}. All Rights
+        Reserved
       </p>
     </div>
   );

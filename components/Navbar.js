@@ -24,7 +24,7 @@ export default function Navbar({ items, isOpen }) {
         } m-1 rounded-xl border-2 transition duration-500 ease-in-out hover:bg-slate-50/10 md:bg-slate-50/0`}
         key={category}
       >
-        <Link href={`/category/${category}`}>
+        <Link href={`/category/${category.toLowerCase()}`}>
           <a
             className={`${
               category == current.slug

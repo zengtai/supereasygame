@@ -8,10 +8,10 @@ export default function Terms({ categories }) {
         <div className="p-6 xl:mx-auto xl:w-[1120px]">
           <div className="text-xl font-bold">{SITE_META.name} Terms of Use</div>
           <p className="my-2">
-            The {SITE_META.name} website located at {SITE_META.url} is a copyrighted work
-            belonging to {SITE_META.name}. Certain features of the Site may be
-            subject to additional guidelines, terms, or rules, which will be
-            posted on the Site in connection with such features.
+            The {SITE_META.name} website located at {SITE_META.url} is a
+            copyrighted work belonging to {SITE_META.name}. Certain features of
+            the Site may be subject to additional guidelines, terms, or rules,
+            which will be posted on the Site in connection with such features.
           </p>
           <p className="my-2">
             All such additional terms, guidelines, and rules are incorporated by
@@ -503,7 +503,7 @@ export default function Terms({ categories }) {
           </p>
           <h2 className="text-md my-3 font-bold">Contact Information</h2>
           <p className="my-2">Address: Singapore</p>
-          <p className="my-2">Email: contact@{SITE_META.domain}</p>
+          <p className="my-2">Email: biz@uptap.com</p>
         </div>
       </Layout>
     </>
