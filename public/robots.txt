@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.supereasygame.com
+
+# Sitemaps
+Sitemap: https://www.supereasygame.com/sitemap.xml
