@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout";
-import { SITE_META, SITE_URL } from "../../lib/constants";
+import { SITE_META } from "../../lib/constants";
 import { getCategories } from "../../lib/api";
 export default function PrivacyPolicy({ categories }) {
   return (
@@ -8,7 +8,7 @@ export default function PrivacyPolicy({ categories }) {
         <div className="p-6 xl:mx-auto xl:w-[1120px]">
           <div className="text-xl font-bold">{SITE_META.name} Privacy Policy</div>
           <p className="my-2">
-            At {SITE_META.name}, accessible from {SITE_URL}, one of our main
+            At {SITE_META.name}, accessible from {SITE_META.url}, one of our main
             priorities is the privacy of our visitors. This Privacy Policy
             document contains types of information that is collected and
             recorded by {SITE_META.name} and how we use it.

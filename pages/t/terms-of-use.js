@@ -1,5 +1,5 @@
 import Layout from "../../components/Layout";
-import { SITE_META, SITE_URL } from "../../lib/constants";
+import { SITE_META } from "../../lib/constants";
 import { getCategories } from "../../lib/api";
 export default function Terms({ categories }) {
   return (
@@ -8,7 +8,7 @@ export default function Terms({ categories }) {
         <div className="p-6 xl:mx-auto xl:w-[1120px]">
           <div className="text-xl font-bold">{SITE_META.name} Terms of Use</div>
           <p className="my-2">
-            The {SITE_META.name} website located at {SITE_URL} is a copyrighted work
+            The {SITE_META.name} website located at {SITE_META.url} is a copyrighted work
             belonging to {SITE_META.name}. Certain features of the Site may be
             subject to additional guidelines, terms, or rules, which will be
             posted on the Site in connection with such features.
