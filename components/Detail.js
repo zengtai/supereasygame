@@ -1,7 +1,7 @@
 import Image from "./Image";
 import Link from "next/link";
 import Head from "next/head";
-import { SITE_NAME } from "../lib/constants";
+import { SITE_META } from "../lib/constants";
 import { starIcon } from "./Icons";
 
 export default function Detail({ game }) {
@@ -9,7 +9,7 @@ export default function Detail({ game }) {
     <>
       <Head>
         <title>
-          Play {game.title} on {SITE_NAME}
+          {`Play ${game.title} on ${SITE.SITE_META.name}`}
         </title>
       </Head>
       <div className="flex flex-col items-center rounded-[2rem] border-8 border-sky-100 bg-white p-5 text-cyan-700 shadow-lg shadow-black/10 md:flex-row md:items-start">

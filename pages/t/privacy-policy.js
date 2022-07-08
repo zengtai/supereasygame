@@ -1,17 +1,17 @@
 import Layout from "../../components/Layout";
-import { SITE_NAME, SITE_URL } from "../../lib/constants";
+import { SITE_META, SITE_URL } from "../../lib/constants";
 import { getCategories } from "../../lib/api";
 export default function PrivacyPolicy({ categories }) {
   return (
     <>
       <Layout items={categories}>
         <div className="p-6 xl:mx-auto xl:w-[1120px]">
-          <div className="text-xl font-bold">{SITE_NAME} Privacy Policy</div>
+          <div className="text-xl font-bold">{SITE_META.name} Privacy Policy</div>
           <p className="my-2">
-            At {SITE_NAME}, accessible from {SITE_URL}, one of our main
+            At {SITE_META.name}, accessible from {SITE_URL}, one of our main
             priorities is the privacy of our visitors. This Privacy Policy
             document contains types of information that is collected and
-            recorded by {SITE_NAME} and how we use it.
+            recorded by {SITE_META.name} and how we use it.
           </p>
           <p className="my-2">
             If you have additional questions or require more information about
@@ -20,7 +20,7 @@ export default function PrivacyPolicy({ categories }) {
           <p className="my-2">
             This Privacy Policy applies only to our online activities and is
             valid for visitors to our website with regards to the information
-            that they shared and/or collect in {SITE_NAME}. This policy is not
+            that they shared and/or collect in {SITE_META.name}. This policy is not
             applicable to any information collected offline or via channels
             other than this website.
           </p>
@@ -68,7 +68,7 @@ export default function PrivacyPolicy({ categories }) {
           </ul>
           <h2 className="text-md my-3 font-bold">Log Files</h2>
           <p className="my-2">
-            {SITE_NAME} follows a standard procedure of using log files. These
+            {SITE_META.name} follows a standard procedure of using log files. These
             files log visitors when they visit websites. All hosting companies
             do this and a part of hosting services’ analytics. The information
             collected by log files include internet protocol (IP) addresses,
@@ -81,7 +81,7 @@ export default function PrivacyPolicy({ categories }) {
           </p>
           <h2 className="text-md my-3 font-bold">Cookies and Web Beacons</h2>
           <p className="my-2">
-            Like any other website, {SITE_NAME} uses ‘cookies’. These cookies
+            Like any other website, {SITE_META.name} uses ‘cookies’. These cookies
             are used to store information including visitors’ preferences, and
             the pages on the website that the visitor accessed or visited. The
             information is used to optimize the users’ experience by customizing
@@ -114,12 +114,12 @@ export default function PrivacyPolicy({ categories }) {
           </h2>
           <p className="my-2">
             You may consult this list to find the Privacy Policy for each of the
-            advertising partners of {SITE_NAME}.
+            advertising partners of {SITE_META.name}.
           </p>
           <p className="my-2">
             Third-party ad servers or ad networks uses technologies like
             cookies, JavaScript, or Web Beacons that are used in their
-            respective advertisements and links that appear on {SITE_NAME},
+            respective advertisements and links that appear on {SITE_META.name},
             which are sent directly to users’ browser. They automatically
             receive your IP address when this occurs. These technologies are
             used to measure the effectiveness of their advertising campaigns
@@ -127,14 +127,14 @@ export default function PrivacyPolicy({ categories }) {
             websites that you visit.
           </p>
           <p className="my-2">
-            Note that {SITE_NAME} has no access to or control over these cookies
+            Note that {SITE_META.name} has no access to or control over these cookies
             that are used by third-party advertisers.
           </p>
           <h2 className="text-md my-3 font-bold">
             Third Party Privacy Policies
           </h2>
           <p className="my-2">
-            {SITE_NAME}’s Privacy Policy does not apply to other advertisers or
+            {SITE_META.name}’s Privacy Policy does not apply to other advertisers or
             websites. Thus, we are advising you to consult the respective
             Privacy Policies of these third-party ad servers for more detailed
             information. It may include their practices and instructions about
@@ -216,7 +216,7 @@ export default function PrivacyPolicy({ categories }) {
             participate in, and/or monitor and guide their online activity.
           </p>
           <p className="my-2">
-            {SITE_NAME} does not knowingly collect any Personal Identifiable
+            {SITE_META.name} does not knowingly collect any Personal Identifiable
             Information from children under the age of 13. If you think that
             your child provided this kind of information on our website, we
             strongly encourage you to contact us immediately and we will do our

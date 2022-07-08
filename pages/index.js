@@ -12,7 +12,7 @@ import { getGames, getCategories } from "../lib/api";
 import Link from "next/link";
 import Image from "../components/Image";
 import Layout from "../components/Layout";
-import { SITE_NAME, HOME_ADS_ID } from "../lib/constants";
+import { SITE_META, HOME_ADS_ID } from "../lib/constants";
 import List from "../components/List";
 import Adsense from "../components/Adsense";
 import InfiniteScroll from "react-infinite-scroll-component";
@@ -41,7 +41,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
     <>
       <Layout items={categories}>
         <Head>
-          <title>{SITE_NAME} | Play Free Games Online</title>
+          <title>{`${SITE_META.name} | Play Free Games Online`}</title>
         </Head>
         <div className="relative z-30 grow py-4">
           <div className="px-6 md:px-8">

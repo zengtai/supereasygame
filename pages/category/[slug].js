@@ -3,7 +3,7 @@ import List from "../../components/List";
 import { useRouter } from "next/router";
 import { getGamesByCategory, getCategories } from "../../lib/api";
 import Head from "next/head";
-import { SITE_NAME, CAT_ADS_ID } from "../../lib/constants";
+import { CAT_ADS_ID, SITE_META } from "../../lib/constants";
 import Adsense from "../../components/Adsense";
 
 export default function GamesListByCategory({ games, categories }) {
@@ -19,7 +19,7 @@ export default function GamesListByCategory({ games, categories }) {
       <Layout items={categories} isOpen>
         <Head>
           <title>
-            {categoryName} Games | Play {categoryName} Games on {SITE_NAME}
+            {`${categoryName} Games | Play ${categoryName} Games on ${SITE_META.name}`}
           </title>
         </Head>
 
