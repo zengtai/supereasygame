@@ -1,9 +1,13 @@
 import Layout from "../../components/Layout";
 import { SITE_META } from "../../lib/constants";
 import { getGames } from "../../lib/api";
+import Head from "next/head";
 export default function PrivacyPolicy({ categories }) {
   return (
     <>
+      <Head>
+        <title>{`${SITE_META.name} Privacy Policy`}</title>
+      </Head>
       <Layout items={categories}>
         <div className="p-6 xl:mx-auto xl:w-[1120px]">
           <div className="text-xl font-bold">

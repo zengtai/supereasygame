@@ -1,24 +1,34 @@
-import Head from "next/head";
 import { useState } from "react";
+import { SITE_META, ADS_SLOT_ID, FEATURED_GAMES } from "../lib/constants";
+
+import Head from "next/head";
+// import { useAmp } from "next/amp";
+
+import { getGames } from "../lib/api";
+
 import {
-  fireIcon,
+  // fireIcon,
   hotIcon,
   topIcon,
   gameIcon,
   categoryIcon,
   starIcon,
 } from "../components/Icons";
-import { getGames } from "../lib/api";
+
 import Link from "next/link";
 import Image from "../components/Image";
 import Layout from "../components/Layout";
-import { SITE_META, ADS_SLOT_ID, FEATURED_GAMES } from "../lib/constants";
 import List from "../components/List";
 import Banner from "../components/Banner";
-import InfiniteScroll from "react-infinite-scroll-component";
 import Category from "../components/Category";
 
+import InfiniteScroll from "react-infinite-scroll-component";
+
+// export const config = { amp: "hybrid" };
+
 export default function Home({ games, newGames, featuredGames, categories }) {
+  // const isAmp = useAmp();
+
   const initGames = games.slice(0, 24);
   const total = games.length;
 
