@@ -14,20 +14,20 @@ export default function Navbar({ items, isOpen }) {
     setMenuOpen(!isMenuOpen);
   }
   // console.log(children);
-  const categoryNav = items.map((category) => {
+  const categoryNav = items.sort().map((category) => {
     return (
       <li
         className={`${
           category == current.slug
             ? `border-slate-50/80 bg-slate-50/20 md:bg-slate-50/10 md:shadow-lg`
             : `border-slate-50/20 bg-slate-50/10 md:border-slate-50/0 md:shadow-none`
-        } m-1 rounded-xl border-2 transition duration-500 ease-in-out hover:bg-slate-50/10 md:bg-slate-50/0`}
+        } m-1 overflow-hidden rounded-xl border-2 transition duration-500 ease-in-out hover:bg-slate-50/10 md:bg-slate-50/0`}
         key={category}
       >
         <Link href={`/category/${category.toLowerCase()}`}>
           <a
             className={`${
-              category == current.slug
+              category.toLowerCase() == current.slug
                 ? `bg-slate-50/10 opacity-80`
                 : `opacity-50`
             } block p-2 text-white`}
