@@ -1,7 +1,6 @@
 import Image from "./Image";
 import Link from "next/link";
-import Head from "next/head";
-import { SITE_META } from "../lib/constants";
+
 import { starIcon } from "./Icons";
 import { useState } from "react";
 
