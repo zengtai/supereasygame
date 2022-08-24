@@ -19,11 +19,13 @@ import Link from "next/link";
 import Image from "../components/Image";
 import Layout from "../components/Layout";
 import List from "../components/List";
-import Banner from "../components/Banner";
+
 import Category from "../components/Category";
+import dynamic from "next/dynamic";
 
-import InfiniteScroll from "react-infinite-scroll-component";
-
+// import InfiniteScroll from "react-infinite-scroll-component";
+const InfiniteScroll = dynamic(() => import("react-infinite-scroll-component"));
+const Banner = dynamic(() => import("../components/Banner"));
 // export const config = { amp: "hybrid" };
 
 export default function Home({ games, newGames, featuredGames, categories }) {
