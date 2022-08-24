@@ -20,20 +20,66 @@ const Banner = ({
     }
   }, []);
 
+  const devMode = `${process.env.NODE_ENV}` === `development`;
+
   return auto ? (
-    <div className={`${className}`}>
-      <div className="bg-black/5 text-center text-xs text-white/20">
-        ADVERTISEMENT
+    devMode ? (
+      <div className={`${className}`}>
+        <div className="bg-black/5 text-center text-xs text-white/20">
+          ADVERTISEMENT
+        </div>
+        <ins
+          className={`adsbygoogle`}
+          style={style ? style : { display: `block` }}
+          data-ad-layout={layout}
+          data-ad-format={`auto`}
+          data-ad-client={client}
+          data-ad-slot={slot}
+          data-ad-layout-key={layoutKey}
+          data-full-width-responsive={`true`}
+          data-adtest="on"
+        />
       </div>
+    ) : (
+      <div className={`${className}`}>
+        <div className="bg-black/5 text-center text-xs text-white/20">
+          ADVERTISEMENT
+        </div>
+        <ins
+          className={`adsbygoogle`}
+          style={style ? style : { display: `block` }}
+          data-ad-layout={layout}
+          data-ad-format={`auto`}
+          data-ad-client={client}
+          data-ad-slot={slot}
+          data-ad-layout-key={layoutKey}
+          data-full-width-responsive={`true`}
+        />
+      </div>
+    )
+  ) : devMode ? (
+    <div
+      className={`${className} AdContainer relative z-0 mx-auto mb-2 flex flex-col items-center overflow-hidden bg-black/5`}
+    >
+      <div className="text-center text-xs text-white/20">ADVERTISEMENT</div>
       <ins
         className={`adsbygoogle`}
-        style={style ? style : { display: `block` }}
+        style={
+          style
+            ? style
+            : {
+                display: `flex`,
+                justifyContent: `center`,
+                width: `100%`,
+                height: `100%`,
+              }
+        }
         data-ad-layout={layout}
-        data-ad-format={`auto`}
+        data-ad-format={format}
         data-ad-client={client}
         data-ad-slot={slot}
         data-ad-layout-key={layoutKey}
-        data-full-width-responsive={`true`}
+        data-full-width-responsive={responsive}
         data-adtest="on"
       />
     </div>
@@ -60,7 +106,6 @@ const Banner = ({
         data-ad-slot={slot}
         data-ad-layout-key={layoutKey}
         data-full-width-responsive={responsive}
-        data-adtest="on"
       />
     </div>
   );
