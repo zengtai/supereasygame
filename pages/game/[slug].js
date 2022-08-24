@@ -1,24 +1,17 @@
-import Layout from "../../components/Layout";
-import { useRouter } from "next/router";
-import { getCategories, getGames } from "../../lib/api";
-import Detail from "../../components/Detail";
-import ListItem from "../../components/ListItem";
-import Link from "next/link";
-import Banner from "../../components/Banner";
-import { ADS_SLOT_ID, SITE_META } from "../../lib/constants";
-import { sparklesIcon } from "../../components/Icons";
+import dynamic from "next/dynamic";
 import Head from "next/head";
+import Link from "next/link";
+import { useRouter } from "next/router";
+import Detail from "../../components/Detail";
+import { sparklesIcon } from "../../components/Icons";
+import Layout from "../../components/Layout";
+import ListItem from "../../components/ListItem";
+import { getGames } from "../../lib/api";
+import { ADS_SLOT_ID, SITE_META } from "../../lib/constants";
+const Banner = dynamic(() => import("../components/Banner"));
 
-export default function Games({
-  game,
-  categories,
-  leftGames,
-  rightGames,
-  bottomGames,
-}) {
+export default function Games({ game, categories, leftGames, rightGames }) {
   // console.log(game);
-  const router = useRouter();
-  const { slug } = router.query;
 
   const AsideGameList = ({ games }) => {
     return (
@@ -95,7 +88,7 @@ export async function getStaticProps(context) {
       categories,
       leftGames: relatedGames.slice(0, 8),
       rightGames: relatedGames.slice(8, 16),
-      bottomGames: relatedGames.slice(16, 24),
+      // bottomGames: relatedGames.slice(16, 24),
     },
   };
 }

@@ -14,7 +14,8 @@ const Banner = ({
 }) => {
   useEffect(() => {
     try {
-      (window.adsbygoogle || []).push({});
+      let adsbygoogle = window.adsbygoogle || [];
+      adsbygoogle.push({});
     } catch (e) {
       console.error(e.message);
     }
