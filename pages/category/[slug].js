@@ -24,9 +24,9 @@ export default function GamesListByCategory({ games, categories }) {
           </title>
         </Head>
 
-        <div className="grow pt-4 md:p-8">
+        <div className="grow pt-6 md:p-8">
           <div className="xl:col-span-8 xl:col-start-3 xl:row-span-3 xl:row-start-1">
-            <div className="mx-6 mt-4 flex flex-row space-x-2 pb-3 drop-shadow md:mx-8">
+            <div className="mx-6 flex flex-row space-x-2 pb-3 drop-shadow md:mx-8">
               <Link href={`/`}>Home</Link>
               <span>/</span>
               <Link href={`/category/${categoryName.toLowerCase()}`}>
@@ -42,7 +42,11 @@ export default function GamesListByCategory({ games, categories }) {
           </div>
         </div>
 
-        <Banner slot={ADS_SLOT_ID.category} auto />
+        <Banner
+          slot={ADS_SLOT_ID.category}
+          auto
+          key={`category-ad-${categoryName}`}
+        />
       </Layout>
     </>
   );

@@ -35,13 +35,11 @@ export default function Detail({ game }) {
           <h1 className="py-2 text-xl font-semibold md:text-3xl">
             <span>{game.title}</span>
           </h1>
-          <p className="capitalize">
-            <Link href={`/category/${game.category.toLowerCase()}`}>
-              <a className="rounded-md bg-lime-600/80 py-1 px-2 text-xs text-sky-100/90 shadow-md shadow-lime-500/30">
-                {game.category.toLowerCase()}
-              </a>
-            </Link>
-          </p>
+          <div className="capitalize">
+            <span className="rounded-md bg-lime-600/80 py-1 px-2 text-xs text-sky-100/90 shadow-md shadow-lime-500/30">
+              {game.category.toLowerCase()}
+            </span>
+          </div>
           <p className="mt-3 flex flex-row items-center justify-center space-x-3 md:justify-start">
             <span className="text-2xl font-bold">
               <span className="flex flex-row items-center text-orange-500">
@@ -51,7 +49,7 @@ export default function Detail({ game }) {
             </span>
             <span className="opacity-50">{game.played} played</span>
           </p>
-          <div className="py-3 text-left text-sm text-sky-800/80 md:text-sm">
+          <div className="text-left text-sm text-sky-800/80 md:text-sm">
             <div
               onClick={toggle}
               className={`

@@ -61,7 +61,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
             content={`supereasy game, supereasy games, instant games, easy game, free online games, casual games, flash games, browser games, free games to play, arcade games, pc games download, online games for pc, best online games, free games for pc, play games online`}
           />
         </Head>
-        <div className="relative z-30 grow pt-4">
+        <div className="relative z-30 grow pt-5">
           <div className="px-6 md:px-8">
             <List
               icon={hotIcon()}
@@ -75,6 +75,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
             className={`banner`}
             slot={ADS_SLOT_ID.home}
             responsive="false"
+            key={`home-ad-1`}
           />
           <div className="px-6 md:px-8">
             <List
@@ -85,7 +86,12 @@ export default function Home({ games, newGames, featuredGames, categories }) {
             />
           </div>
 
-          <Banner style={{ display: `block` }} slot={ADS_SLOT_ID.home} auto />
+          <Banner
+            style={{ display: `block` }}
+            slot={ADS_SLOT_ID.home}
+            auto
+            key={`home-ad-2`}
+          />
           <div className="px-6 md:px-8">
             <h2 className="flex items-center space-x-2 py-2 pb-0 font-semibold text-sky-100 drop-shadow md:text-lg">
               <span className="text-lime-400">{gameIcon()}</span>
@@ -139,7 +145,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
             />
           </div>
           <div className="mt-4">
-            <Banner slot={ADS_SLOT_ID.home} auto />
+            <Banner slot={ADS_SLOT_ID.home} auto key={`home-ad-3`} />
           </div>
         </div>
       </Layout>
