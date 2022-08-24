@@ -42,7 +42,7 @@ export default function Games({
           />
         </Head>
 
-        <div className="relative z-30 grow">
+        <div className="relative z-30 grow pt-4">
           <div className="grid gap-3 md:my-8 md:gap-6 xl:mx-8 xl:grid-cols-12 xl:grid-rows-4">
             <div className="xl:col-span-8 xl:col-start-3 xl:row-span-4 xl:row-start-1">
               <div className="mx-6 mt-4 flex flex-row space-x-2 pb-3 drop-shadow md:mx-8">

@@ -61,7 +61,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
             content={`supereasy game, supereasy games, instant games, easy game, free online games, casual games, flash games, browser games, free games to play, arcade games, pc games download, online games for pc, best online games, free games for pc, play games online`}
           />
         </Head>
-        <div className="relative z-30 grow py-4">
+        <div className="relative z-30 grow pt-4">
           <div className="px-6 md:px-8">
             <List
               icon={hotIcon()}
@@ -130,13 +130,16 @@ export default function Home({ games, newGames, featuredGames, categories }) {
               </ul>
             </InfiniteScroll>
           </div>
-          <Banner style={{ display: "block" }} slot={ADS_SLOT_ID.home} auto />
+
           <div className="px-6">
             <Category
               icon={categoryIcon()}
               title="Categories"
               categories={categories}
             />
+          </div>
+          <div className="mt-4">
+            <Banner slot={ADS_SLOT_ID.home} auto />
           </div>
         </div>
       </Layout>
