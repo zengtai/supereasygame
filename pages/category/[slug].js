@@ -45,7 +45,7 @@ export default function GamesListByCategory({ games, categories }) {
         <Banner
           slot={ADS_SLOT_ID.category}
           auto
-          key={`category-ad-${categoryName}`}
+          key={`category-ad-${categoryName}-${Math.random()}`}
         />
       </Layout>
     </>

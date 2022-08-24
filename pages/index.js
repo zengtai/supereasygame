@@ -75,7 +75,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
             className={`banner`}
             slot={ADS_SLOT_ID.home}
             responsive="false"
-            key={`home-ad-1`}
+            key={`home-ad-1-${Math.random()}`}
           />
           <div className="px-6 md:px-8">
             <List
@@ -90,7 +90,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
             style={{ display: `block` }}
             slot={ADS_SLOT_ID.home}
             auto
-            key={`home-ad-2`}
+            key={`home-ad-2-${Math.random()}`}
           />
           <div className="px-6 md:px-8">
             <h2 className="flex items-center space-x-2 py-2 pb-0 font-semibold text-sky-100 drop-shadow md:text-lg">
@@ -145,7 +145,11 @@ export default function Home({ games, newGames, featuredGames, categories }) {
             />
           </div>
           <div className="mt-4">
-            <Banner slot={ADS_SLOT_ID.home} auto key={`home-ad-3`} />
+            <Banner
+              slot={ADS_SLOT_ID.home}
+              auto
+              key={`home-ad-3-${Math.random()}`}
+            />
           </div>
         </div>
       </Layout>

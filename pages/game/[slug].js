@@ -59,7 +59,7 @@ export default function Games({
                 className={`banner mt-4`}
                 slot={ADS_SLOT_ID.detail}
                 auto
-                key={`detail-ad-${game.title}`}
+                key={`detail-ad-${game.title}-${Math.random()}`}
               />
             </div>
 
