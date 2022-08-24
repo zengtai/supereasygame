@@ -1,14 +1,14 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import Link from "next/link";
-import { useRouter } from "next/router";
+
 import Detail from "../../components/Detail";
 import { sparklesIcon } from "../../components/Icons";
 import Layout from "../../components/Layout";
 import ListItem from "../../components/ListItem";
 import { getGames } from "../../lib/api";
 import { ADS_SLOT_ID, SITE_META } from "../../lib/constants";
-const Banner = dynamic(() => import("../components/Banner"));
+const Banner = dynamic(() => import("../../components/Banner"));
 
 export default function Games({ game, categories, leftGames, rightGames }) {
   // console.log(game);
