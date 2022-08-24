@@ -22,7 +22,7 @@ export default function Games({
 
   const AsideGameList = ({ games }) => {
     return (
-      <ul className="grid w-full grid-cols-5 gap-3 md:grid-cols-10 md:gap-6 xl:grid-cols-2">
+      <ul className="grid w-full grid-cols-4 gap-3 md:grid-cols-10 md:gap-6 xl:grid-cols-2">
         <ListItem games={games} />
       </ul>
     );
@@ -41,17 +41,11 @@ export default function Games({
             content={`${game.title.toLowerCase()}, instant games, easy game, free online games, flash games, casual games,, browser games, free games to play, arcade games, pc games download, online games for pc, best online games, free games for pc, play games online`}
           />
         </Head>
-        <Banner
-          className={`banner mt-4`}
-          style={{ display: "block" }}
-          slot={ADS_SLOT_ID.detail}
-          responsive="false"
-        />
 
-        <div className="relative z-30 grow px-6 md:p-8">
-          <div className="grid gap-3 md:gap-6 xl:grid-cols-12 xl:grid-rows-5">
-            <div className="xl:col-span-8 xl:col-start-3 xl:row-span-3 xl:row-start-1">
-              <div className="flex flex-row space-x-2 pb-3 drop-shadow">
+        <div className="relative z-30 grow">
+          <div className="grid gap-3 md:my-8 md:gap-6 xl:mx-8 xl:grid-cols-12 xl:grid-rows-4">
+            <div className="xl:col-span-8 xl:col-start-3 xl:row-span-4 xl:row-start-1">
+              <div className="mx-6 mt-4 flex flex-row space-x-2 pb-3 drop-shadow md:mx-8">
                 <Link href={`/`}>Home</Link>
                 <span>/</span>
                 <Link href={`/category/${game.category.toLowerCase()}`}>
@@ -61,32 +55,26 @@ export default function Games({
                 <span>{game.title}</span>
               </div>
               <Detail game={game} />
+              <Banner
+                className={`banner mt-4`}
+                slot={ADS_SLOT_ID.detail}
+                auto
+              />
             </div>
-            <h3 className="flex flex-row px-2 text-lg font-semibold text-sky-100/80 xl:sr-only">
+
+            <h3 className="mx-6 flex flex-row px-2 text-lg font-semibold text-sky-100/80 md:mx-8 xl:sr-only">
               <span className="mr-1 text-yellow-500">{sparklesIcon()}</span>
               You may also like
             </h3>
-            <div className="flex items-end xl:col-span-2 xl:col-start-1 xl:row-span-5 xl:row-start-1">
+            <div className="mx-6 flex items-end md:mx-0 xl:col-span-2 xl:col-start-1 xl:row-span-4 xl:row-start-1 ">
               {/* <Adsense height={`h-[200px] md:h-[200px] xl:h-[200px]`} wFull /> */}
               <AsideGameList games={leftGames} />
             </div>
-            <div className="flex items-end xl:col-span-2 xl:col-start-11 xl:row-span-5 xl:row-start-1">
+            <div className="mx-6 mb-4 flex items-end md:mx-0 xl:col-span-2 xl:col-start-11 xl:row-span-4 xl:row-start-1 xl:mb-0 ">
               <AsideGameList games={rightGames} />
-            </div>
-            <div className="flex items-end xl:col-span-8 xl:col-start-3 xl:row-span-2 xl:row-start-4">
-              <ul className="grid w-full grid-cols-5 gap-3 md:grid-cols-10 md:gap-6 xl:grid-cols-8">
-                <ListItem games={bottomGames} />
-              </ul>
             </div>
           </div>
         </div>
-
-        <Banner
-          className={`banner mt-4`}
-          style={{ display: "block" }}
-          slot={ADS_SLOT_ID.detail}
-          responsive="false"
-        />
       </Layout>
     </>
   );
@@ -104,9 +92,9 @@ export async function getStaticProps(context) {
     props: {
       game: game[0],
       categories,
-      leftGames: relatedGames.slice(0, 10),
-      rightGames: relatedGames.slice(10, 20),
-      bottomGames: relatedGames.slice(20, 36),
+      leftGames: relatedGames.slice(0, 8),
+      rightGames: relatedGames.slice(8, 16),
+      bottomGames: relatedGames.slice(16, 24),
     },
   };
 }

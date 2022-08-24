@@ -20,7 +20,7 @@ export default function Detail({ game }) {
   // };
   return (
     <>
-      <div className="flex flex-col items-center rounded-[2rem] border-8 border-sky-100 bg-white p-5 text-cyan-700 shadow-lg shadow-black/10 md:flex-row md:items-start">
+      <div className="mx-6 flex flex-col items-center rounded-[2rem] border-8 border-sky-100 bg-white p-5 text-cyan-700 shadow-lg shadow-black/10 md:mx-8 md:flex-row md:items-start">
         <div className="aspect-square h-24 w-24 shrink-0 md:h-40 md:w-40">
           <Image
             src={game.icon}
@@ -51,7 +51,7 @@ export default function Detail({ game }) {
             </span>
             <span className="opacity-50">{game.played} played</span>
           </p>
-          <p className="py-3 text-left text-sm text-sky-800/80 md:text-sm">
+          <div className="py-3 text-left text-sm text-sky-800/80 md:text-sm">
             <div
               onClick={toggle}
               className={`
@@ -61,10 +61,10 @@ export default function Detail({ game }) {
             >
               {game.description}
             </div>
-          </p>
+          </div>
         </div>
       </div>
-      <p className="py-4 md:pt-4">
+      <div className="mx-6 py-4 md:mx-8 md:pt-4 ">
         <Link href={game.url}>
           <a
             // onClick={handleClick}
@@ -74,7 +74,7 @@ export default function Detail({ game }) {
             PLAY NOW
           </a>
         </Link>
-      </p>
+      </div>
     </>
   );
 }
