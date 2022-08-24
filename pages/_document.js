@@ -8,7 +8,7 @@ class MyDocument extends Document {
         <Head>
           <link
             rel="preload"
-            href="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+            href={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADS_ID}`}
             as="script"
           />
           <script
