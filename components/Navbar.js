@@ -24,10 +24,10 @@ export default function Navbar({ items, isOpen }) {
         } m-1 overflow-hidden rounded-xl border-2 transition duration-500 ease-in-out hover:bg-slate-50/10 md:bg-slate-50/0`}
         key={category}
       >
-        <Link href={`/category/${category.toLowerCase()}`}>
+        <Link href={`/category/${category.toLowerCase().replace(/ /g, `-`)}`}>
           <a
             className={`${
-              category.toLowerCase() == current.slug
+              category.toLowerCase().replace(/ /g, `-`) == current.slug
                 ? `bg-slate-50/10 opacity-80`
                 : `opacity-50`
             } block p-2 text-white`}

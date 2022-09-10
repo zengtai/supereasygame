@@ -13,7 +13,10 @@ export default function GamesListByCategory({ games, categories }) {
   const { slug } = router.query;
   // console.log(router.query);
   // console.log({ slug });
-  const categoryName = slug.toString().replace(/^\S/, (s) => s.toUpperCase());
+  const categoryName = slug
+    .toString()
+    .replace(/^\S/, (s) => s.toUpperCase())
+    .replace(/-/g, ` `);
   // console.log(categoryName);
   return (
     <>
@@ -68,7 +71,7 @@ export const getStaticPaths = async () => {
   const categories = await getGames().then((res) => res.categories);
   const paths = categories.map((category) => ({
     params: {
-      slug: category.toLowerCase(),
+      slug: category.toLowerCase().replace(/ /g, `-`),
     },
   }));
   return {
