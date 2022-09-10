@@ -25,12 +25,18 @@ const Banner = ({
 
   return auto ? (
     <div className={`${className}`}>
-      <div className="bg-black/5 text-center text-xs text-white/20">
-        ADVERTISEMENT
-      </div>
+      <div className="text-center text-xs text-white/50">ADVERTISEMENT</div>
       <ins
         className={`adsbygoogle`}
-        style={style ? style : { display: `block`, margin: `0 auto` }}
+        style={
+          style
+            ? style
+            : {
+                display: `flex`,
+                justifyContent: `center`,
+                margin: `0 auto`,
+              }
+        }
         data-ad-layout={layout}
         data-ad-format={`auto`}
         data-ad-client={client}
@@ -44,7 +50,7 @@ const Banner = ({
     <div
       className={`${className} AdContainer relative z-0 mx-auto mb-2 flex flex-col items-center overflow-hidden bg-black/5`}
     >
-      <div className="text-center text-xs text-white/20">ADVERTISEMENT</div>
+      <div className="text-center text-xs text-white/50">ADVERTISEMENT</div>
       <ins
         className={`adsbygoogle`}
         style={

@@ -1,4 +1,4 @@
-import NextImage from "next/image";
+import NextImage from "next/future/image";
 
 const customLoader = ({ src }) => {
   return src;

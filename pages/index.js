@@ -89,7 +89,6 @@ export default function Home({ games, newGames, featuredGames, categories }) {
           </div>
 
           <Banner
-            style={{ display: `block` }}
             slot={ADS_SLOT_ID.home}
             auto
             key={`home-ad-2-${Math.random()}`}

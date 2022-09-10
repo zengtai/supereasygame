@@ -4,6 +4,7 @@ module.exports = {
     domains: ["cdn.iwantalipstick.com"],
     disableStaticImages: true,
   },
+  swcMinify: true,
   reactStrictMode: true,
   // distDir: "build",
   // trailingSlash: true,
