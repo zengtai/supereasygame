@@ -2,7 +2,7 @@ import Link from "next/link";
 export default function Category({ title, categories, icon }) {
   const categoryList = categories.map((category, index) => (
     <li key={index} className="mx-1 mb-2 capitalize xl:mx-2">
-      <Link href={`/category/${category}`}>
+      <Link href={`/category/${category.toLowerCase().replace(/ /g,"-")}`}>
         <a className="block rounded-full bg-cyan-700 py-2 px-2 text-sm text-sky-200  shadow-md shadow-cyan-800 transition duration-300 ease-in-out hover:scale-110 md:px-3">
           {category}
         </a>
