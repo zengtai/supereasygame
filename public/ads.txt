@@ -1,5 +1,6 @@
 # adsense
 google.com, pub-9209477879340784, DIRECT, f08c47fec0942fa0
+google.com, pub-3775285987185663, DIRECT, f08c47fec0942fa0
 
 # 2022.08.05
 taboola.com, 1411862 , DIRECT,c228e6794e811952
