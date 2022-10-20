@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.uptap.Gamebox",
+      "sha256_cert_fingerprints": [
+        "2C:F4:32:77:FE:FE:EE:0F:BD:04:0D:B5:A4:41:D8:D5:65:09:13:9C:1C:3F:C2:B2:09:03:F4:31:98:63:DD:F5"
+      ]
+    }
+  }
+]
