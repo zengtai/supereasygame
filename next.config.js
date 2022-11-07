@@ -7,6 +7,6 @@ module.exports = {
   swcMinify: true,
   reactStrictMode: true,
   // distDir: "build",
-  // trailingSlash: true,
+  trailingSlash: true,
   // basePath: "/",
 };
