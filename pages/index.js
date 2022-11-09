@@ -5,6 +5,7 @@ import {
   FEATURED_GAMES,
   IMAGE_PATH,
   IMAGE_FORMAT,
+  ADS_ID,
 } from "../lib/constants";
 
 import Head from "next/head";
@@ -28,6 +29,7 @@ import List from "../components/List";
 
 import Category from "../components/Category";
 import dynamic from "next/dynamic";
+import Script from "next/script";
 
 // import InfiniteScroll from "react-infinite-scroll-component";
 const InfiniteScroll = dynamic(() => import("react-infinite-scroll-component"));
@@ -69,6 +71,13 @@ export default function Home({ games, newGames, featuredGames, categories }) {
             content={`supereasy game, supereasy games, instant games, easy game, free online games, casual games, flash games, browser games, free games to play, arcade games, pc games download, online games for pc, best online games, free games for pc, play games online`}
           />
         </Head>
+        <Script
+          id="ads-init"
+          strategy="beforeInteractive"
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADS_ID}`}
+          crossOrigin="anonymous"
+        />
         <div className="relative z-30 grow pt-5">
           <div className="px-6 md:px-8">
             <List

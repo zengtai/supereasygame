@@ -1,13 +1,14 @@
 import dynamic from "next/dynamic";
 import Head from "next/head";
 import Link from "next/link";
+import Script from "next/script";
 
 import Detail from "../../components/Detail";
 import { sparklesIcon } from "../../components/Icons";
 import Layout from "../../components/Layout";
 import ListItem from "../../components/ListItem";
 import { getGames } from "../../lib/api";
-import { ADS_SLOT_ID, SITE_META } from "../../lib/constants";
+import { ADS_SLOT_ID, SITE_META, ADS_ID } from "../../lib/constants";
 const Banner = dynamic(() => import("../../components/Banner"));
 
 export default function Games({ game, categories, leftGames, rightGames }) {
@@ -34,6 +35,13 @@ export default function Games({ game, categories, leftGames, rightGames }) {
             content={`${game.title.toLowerCase()}, instant games, easy game, free online games, flash games, casual games,, browser games, free games to play, arcade games, pc games download, online games for pc, best online games, free games for pc, play games online`}
           />
         </Head>
+        <Script
+          id="ads-init"
+          strategy="beforeInteractive"
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADS_ID}`}
+          crossOrigin="anonymous"
+        />
 
         <div className="relative z-30 grow pt-6">
           <div className="grid gap-3 md:my-8 md:gap-6 xl:mx-8 xl:grid-cols-12 xl:grid-rows-4">

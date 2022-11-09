@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { ADS_ID } from "../lib/constants";
+import { ADS_ID, DEV_MODE } from "../lib/constants";
 
 const Banner = ({
   className,
@@ -21,8 +21,6 @@ const Banner = ({
     }
   }, []);
 
-  const devMode = `${process.env.NODE_ENV}` === `development`;
-
   return auto ? (
     <div className={`${className}`}>
       <div className="text-center text-xs text-white/50">ADVERTISEMENT</div>
@@ -43,7 +41,7 @@ const Banner = ({
         data-ad-slot={slot}
         data-ad-layout-key={layoutKey}
         data-full-width-responsive={`true`}
-        {...(devMode ? { "data-adtest": "on" } : null)}
+        {...(DEV_MODE ? { "data-adtest": "on" } : null)}
       />
     </div>
   ) : (
@@ -69,7 +67,7 @@ const Banner = ({
         data-ad-slot={slot}
         data-ad-layout-key={layoutKey}
         data-full-width-responsive={responsive}
-        {...(devMode ? { "data-adtest": "on" } : null)}
+        {...(DEV_MODE ? { "data-adtest": "on" } : null)}
       />
     </div>
   );

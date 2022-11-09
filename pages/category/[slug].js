@@ -4,8 +4,9 @@ import List from "../../components/List";
 import { useRouter } from "next/router";
 import { getGamesByCategory, getGames } from "../../lib/api";
 import Head from "next/head";
-import { ADS_SLOT_ID, SITE_META } from "../../lib/constants";
+import { ADS_SLOT_ID, SITE_META, ADS_ID } from "../../lib/constants";
 import Banner from "../../components/Banner";
+import Script from "next/script";
 
 export default function GamesListByCategory({ games, categories }) {
   // console.log(games);
@@ -28,6 +29,13 @@ export default function GamesListByCategory({ games, categories }) {
             {`${categoryName} Games by ${SITE_META.name} : Free Online Games to Play`}
           </title>
         </Head>
+        <Script
+          id="ads-init"
+          strategy="beforeInteractive"
+          async
+          src={`https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${ADS_ID}`}
+          crossOrigin="anonymous"
+        />
 
         <div className="grow pt-6 md:p-8">
           <div className="xl:col-span-8 xl:col-start-3 xl:row-span-3 xl:row-start-1">
