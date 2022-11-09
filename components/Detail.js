@@ -4,6 +4,8 @@ import Link from "next/link";
 import { starIcon } from "./Icons";
 import { useState } from "react";
 
+import { IMAGE_PATH, IMAGE_FORMAT } from "../lib/constants";
+
 export default function Detail({ game }) {
   const [isShowAll, setIsShowAll] = useState(false);
   function toggle() {
@@ -23,7 +25,9 @@ export default function Detail({ game }) {
       <div className="mx-6 flex flex-col items-center rounded-[2rem] border-8 border-sky-100 bg-white p-5 text-cyan-700 shadow-lg shadow-black/10 md:mx-8 md:flex-row md:items-start">
         <div className="aspect-square h-24 w-24 shrink-0 md:h-40 md:w-40">
           <Image
-            src={game.icon}
+            src={
+              IMAGE_PATH + IMAGE_FORMAT + "/" + game.name + `.` + IMAGE_FORMAT
+            }
             alt={game.title}
             width={200}
             height={200}
@@ -35,9 +39,13 @@ export default function Detail({ game }) {
           <h1 className="py-2 text-xl font-semibold md:text-3xl">
             <span>{game.title}</span>
           </h1>
-          <div className="capitalize">
+          <div>
             <span className="rounded-md bg-lime-600/80 py-1 px-2 text-xs text-sky-100/90 shadow-md shadow-lime-500/30">
-              {game.category.toLowerCase()}
+              {game.category.toLowerCase() === "io"
+                ? "IO"
+                : game.category
+                    .toLowerCase()
+                    .replace(/^\S/, (s) => s.toUpperCase())}
             </span>
           </div>
           <p className="mt-3 flex flex-row items-center justify-center space-x-3 md:justify-start">

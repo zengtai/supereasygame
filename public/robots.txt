@@ -7,8 +7,3 @@ Host: https://www.supereasygame.com
 
 # Sitemaps
 Sitemap: https://www.supereasygame.com/sitemap.xml
-
-Disallow: cdn.supereasygame.com
-Disallow: cdn2.supereasygame.com
-Disallow: cdn3.supereasygame.com
-Disallow: gamecdn.supereasygame.com

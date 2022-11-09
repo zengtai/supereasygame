@@ -1,5 +1,11 @@
 import { useState } from "react";
-import { SITE_META, ADS_SLOT_ID, FEATURED_GAMES } from "../lib/constants";
+import {
+  SITE_META,
+  ADS_SLOT_ID,
+  FEATURED_GAMES,
+  IMAGE_PATH,
+  IMAGE_FORMAT,
+} from "../lib/constants";
 
 import Head from "next/head";
 // import { useAmp } from "next/amp";
@@ -114,7 +120,14 @@ export default function Home({ games, newGames, featuredGames, categories }) {
                     <Link href={`/game/${game.slug}`}>
                       <a className="group md:delay-50 duration-400 relative block aspect-square overflow-hidden rounded-2xl shadow-md shadow-black/30 transition ease-in-out hover:shadow-lg hover:shadow-black/40 md:hover:origin-bottom md:hover:scale-110">
                         <Image
-                          src={game.icon}
+                          src={
+                            IMAGE_PATH +
+                            IMAGE_FORMAT +
+                            `/` +
+                            game.name +
+                            `.` +
+                            IMAGE_FORMAT
+                          }
                           alt={game.title}
                           width={200}
                           height={200}

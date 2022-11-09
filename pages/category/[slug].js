@@ -13,10 +13,12 @@ export default function GamesListByCategory({ games, categories }) {
   const { slug } = router.query;
   // console.log(router.query);
   // console.log({ slug });
-  const categoryName = slug
+  let categoryName = slug
     .toString()
     .replace(/^\S/, (s) => s.toUpperCase())
     .replace(/-/g, ` `);
+
+  categoryName = categoryName.toLowerCase() === "io" ? `IO` : categoryName;
   // console.log(categoryName);
   return (
     <>
@@ -32,9 +34,7 @@ export default function GamesListByCategory({ games, categories }) {
             <div className="mx-6 flex flex-row space-x-2 pb-3 drop-shadow md:mx-8">
               <Link href={`/`}>Home</Link>
               <span>/</span>
-              <Link href={`/category/${categoryName.toLowerCase()}`}>
-                <a title={categoryName}>{categoryName}</a>
-              </Link>
+              <span>{categoryName}</span>
             </div>
           </div>
           <h1 className="px-2 pb-2 text-center text-xl font-semibold capitalize text-sky-100 drop-shadow md:pb-3 md:text-3xl">

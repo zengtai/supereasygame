@@ -41,7 +41,11 @@ export default function Games({ game, categories, leftGames, rightGames }) {
               <div className="mx-6 flex flex-row space-x-2 pb-3 drop-shadow md:mx-8">
                 <Link href={`/`}>Home</Link>
                 <span>/</span>
-                <Link href={`/category/${game.category.toLowerCase()}`}>
+                <Link
+                  href={`/category/${game.category
+                    .toLowerCase()
+                    .replace(/ /g, `-`)}`}
+                >
                   <a title={game.category}>{game.category}</a>
                 </Link>
                 <span>/</span>

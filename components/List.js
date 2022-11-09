@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "./Image";
 import { starIcon } from "./Icons";
+import { IMAGE_FORMAT, IMAGE_PATH } from "../lib/constants";
 export default function List({ title, games, icon, cols, className }) {
   const setCol = () => {
     if (cols == "2") return `grid-cols-2`;
@@ -14,7 +15,9 @@ export default function List({ title, games, icon, cols, className }) {
       <Link href={`/game/${game.slug}`}>
         <a className="group md:delay-50 duration-400 relative block aspect-square overflow-hidden rounded-2xl shadow-md shadow-black/30 transition ease-in-out hover:shadow-lg hover:shadow-black/40 md:hover:origin-bottom md:hover:scale-110">
           <Image
-            src={game.icon}
+            src={
+              IMAGE_PATH + IMAGE_FORMAT + `/` + game.name + `.` + IMAGE_FORMAT
+            }
             alt={game.title}
             width={200}
             height={200}
