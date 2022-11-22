@@ -1,19 +1,19 @@
-import Layout from "../../components/Layout";
-import { SITE_META } from "../../lib/constants";
+import Layout from "@/components/Layout";
+import { SITE_META } from "@/lib/constants";
 import Head from "next/head";
-import { getGames } from "../../lib/api";
+import { getGames } from "@/lib/api";
 export default function Terms({ categories }) {
   return (
     <>
       <Head>
-        <title>{`${SITE_META.name} Terms of Use`}</title>
+        <title>{`${SITE_META.NAME} Terms of Use`}</title>
       </Head>
       <Layout items={categories}>
         <div className="page">
-          <h1>{SITE_META.name} Terms of Use</h1>
+          <h1>{SITE_META.NAME} Terms of Use</h1>
           <p>
-            The {SITE_META.name} website located at {SITE_META.url} is a
-            copyrighted work belonging to {SITE_META.name}. Certain features of
+            The {SITE_META.NAME} website located at {SITE_META.URL} is a
+            copyrighted work belonging to {SITE_META.NAME}. Certain features of
             the Site may be subject to additional guidelines, terms, or rules,
             which will be posted on the Site in connection with such features.
           </p>
@@ -122,7 +122,7 @@ export default function Terms({ categories }) {
           </p>
           <p>
             <strong>Cookies and Web Beacons.</strong> Like any other website,
-            {SITE_META.name} uses ‘cookies’. These cookies are used to store
+            {SITE_META.NAME} uses ‘cookies’. These cookies are used to store
             information including visitors’ preferences, and the pages on the
             website that the visitor accessed or visited. The information is
             used to optimize the users’ experience by customizing our web page

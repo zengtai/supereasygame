@@ -6,12 +6,13 @@ import {
   IMAGE_PATH,
   IMAGE_FORMAT,
   ADS_ID,
-} from "../lib/constants";
+  SHOW_AD,
+} from "@/lib/constants";
 
 import Head from "next/head";
 // import { useAmp } from "next/amp";
 
-import { getGames } from "../lib/api";
+import { getGames } from "@/lib/api/index";
 
 import {
   // fireIcon,
@@ -20,20 +21,20 @@ import {
   gameIcon,
   categoryIcon,
   starIcon,
-} from "../components/Icons";
+} from "@/components/Icons";
 
 import Link from "next/link";
-import Image from "../components/Image";
-import Layout from "../components/Layout";
-import List from "../components/List";
+import Image from "@/components/Image";
+import Layout from "@/components/Layout";
+import List from "@/components/List";
 
-import Category from "../components/Category";
+import Category from "@/components/Category";
 import dynamic from "next/dynamic";
 import Script from "next/script";
 
 // import InfiniteScroll from "react-infinite-scroll-component";
 const InfiniteScroll = dynamic(() => import("react-infinite-scroll-component"));
-const Banner = dynamic(() => import("../components/Banner"));
+const Banner = dynamic(() => import("@/components/Banner"));
 // export const config = { amp: "hybrid" };
 
 export default function Home({ games, newGames, featuredGames, categories }) {
@@ -61,7 +62,8 @@ export default function Home({ games, newGames, featuredGames, categories }) {
     <>
       <Layout items={categories}>
         <Head>
-          <title>{`${SITE_META.name} : Free Online Games to Play`}</title>
+          <title>{`${SITE_META.NAME} : Free Online Games to Play`}</title>
+          <link rel="canonical" href={SITE_META.URL} />
           <meta
             name="description"
             content="Come to Supereasy Game to play the newest online casual games for free!"
@@ -90,10 +92,11 @@ export default function Home({ games, newGames, featuredGames, categories }) {
 
           <Banner
             className={`banner`}
-            slot={ADS_SLOT_ID.home}
+            slot={ADS_SLOT_ID.HOME}
             responsive="false"
             key={`home-ad-1-${Math.random()}`}
           />
+
           <div className="px-6 md:px-8">
             <List
               icon={topIcon()}
@@ -104,10 +107,11 @@ export default function Home({ games, newGames, featuredGames, categories }) {
           </div>
 
           <Banner
-            slot={ADS_SLOT_ID.home}
+            slot={ADS_SLOT_ID.HOME}
             auto
             key={`home-ad-2-${Math.random()}`}
           />
+
           <div className="px-6 md:px-8">
             <h2 className="flex items-center space-x-2 py-2 pb-0 font-semibold text-sky-100 drop-shadow md:text-lg">
               <span className="text-lime-400">{gameIcon()}</span>
@@ -167,9 +171,10 @@ export default function Home({ games, newGames, featuredGames, categories }) {
               categories={categories}
             />
           </div>
+
           <div className="mt-4">
             <Banner
-              slot={ADS_SLOT_ID.home}
+              slot={ADS_SLOT_ID.HOME}
               auto
               key={`home-ad-3-${Math.random()}`}
             />

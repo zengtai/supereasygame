@@ -1,10 +1,10 @@
 import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Script from "next/script";
-import * as gtag from "../lib/gtag";
-import { GA_ID } from "../lib/constants";
+import * as gtag from "@/lib/gtag";
+import { GA_ID } from "@/lib/constants";
 import NProgress from "nprogress";
-import "../styles/globals.css";
+import "@/styles/globals.css";
 import "../public/nprogress.css";
 import Head from "next/head";
 

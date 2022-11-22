@@ -1,21 +1,21 @@
-import Layout from "../../components/Layout";
-import { SITE_META } from "../../lib/constants";
-import { getGames } from "../../lib/api";
+import Layout from "@/components/Layout";
+import { SITE_META } from "@/lib/constants";
+import { getGames } from "@/lib/api";
 import Head from "next/head";
 export default function PrivacyPolicy({ categories }) {
   return (
     <>
       <Head>
-        <title>{`${SITE_META.name} Privacy Policy`}</title>
+        <title>{`${SITE_META.NAME} Privacy Policy`}</title>
       </Head>
       <Layout items={categories}>
         <div className="page">
-          <h1>{SITE_META.name} Privacy Policy</h1>
+          <h1>{SITE_META.NAME} Privacy Policy</h1>
           <p>
-            At {SITE_META.name}, accessible from {SITE_META.url}, one of our
+            At {SITE_META.NAME}, accessible from {SITE_META.URL}, one of our
             main priorities is the privacy of our visitors. This Privacy Policy
             document contains types of information that is collected and
-            recorded by {SITE_META.name} and how we use it.
+            recorded by {SITE_META.NAME} and how we use it.
           </p>
           <p>
             If you have additional questions or require more information about
@@ -24,7 +24,7 @@ export default function PrivacyPolicy({ categories }) {
           <p>
             This Privacy Policy applies only to our online activities and is
             valid for visitors to our website with regards to the information
-            that they shared and/or collect in {SITE_META.name}. This policy is
+            that they shared and/or collect in {SITE_META.NAME}. This policy is
             not applicable to any information collected offline or via channels
             other than this website.
           </p>
@@ -70,7 +70,7 @@ export default function PrivacyPolicy({ categories }) {
           </ul>
           <h2>Log Files</h2>
           <p>
-            {SITE_META.name} follows a standard procedure of using log files.
+            {SITE_META.NAME} follows a standard procedure of using log files.
             These files log visitors when they visit websites. All hosting
             companies do this and a part of hosting services{`’`} analytics. The
             information collected by log files include internet protocol (IP)
@@ -83,7 +83,7 @@ export default function PrivacyPolicy({ categories }) {
           </p>
           <h2>Cookies and Web Beacons</h2>
           <p>
-            Like any other website, {SITE_META.name} uses ‘cookies{`’`}. These
+            Like any other website, {SITE_META.NAME} uses ‘cookies{`’`}. These
             cookies are used to store information including visitors{`’`}
             preferences, and the pages on the website that the visitor accessed
             or visited. The information is used to optimize the users{`’`}
@@ -164,12 +164,12 @@ export default function PrivacyPolicy({ categories }) {
           <h2>Advertising Partners Privacy Policies</h2>
           <p>
             You may consult this list to find the Privacy Policy for each of the
-            advertising partners of {SITE_META.name}.
+            advertising partners of {SITE_META.NAME}.
           </p>
           <p>
             Third-party ad servers or ad networks uses technologies like
             cookies, JavaScript, or Web Beacons that are used in their
-            respective advertisements and links that appear on {SITE_META.name},
+            respective advertisements and links that appear on {SITE_META.NAME},
             which are sent directly to users{`’`} browser. They automatically
             receive your IP address when this occurs. These technologies are
             used to measure the effectiveness of their advertising campaigns
@@ -202,12 +202,12 @@ export default function PrivacyPolicy({ categories }) {
             </li>
           </ul>
           <p>
-            Note that {SITE_META.name} has no access to or control over these
+            Note that {SITE_META.NAME} has no access to or control over these
             cookies that are used by third-party advertisers.
           </p>
           <h2>Third Party Privacy Policies</h2>
           <p>
-            {SITE_META.name}
+            {SITE_META.NAME}
             {`’`}s Privacy Policy does not apply to other advertisers or
             websites. Thus, we are advising you to consult the respective
             Privacy Policies of these third-party ad servers for more detailed
@@ -286,7 +286,7 @@ export default function PrivacyPolicy({ categories }) {
             participate in, and/or monitor and guide their online activity.
           </p>
           <p>
-            {SITE_META.name} does not knowingly collect any Personal
+            {SITE_META.NAME} does not knowingly collect any Personal
             Identifiable Information from children under the age of 13. If you
             think that your child provided this kind of information on our
             website, we strongly encourage you to contact us immediately and we

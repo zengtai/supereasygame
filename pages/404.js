@@ -1,6 +1,6 @@
 import Head from "next/head";
-import Layout from "../components/Layout";
-import { getGames } from "../lib/api";
+import Layout from "@/components/Layout";
+import { getGames } from "@/lib/api";
 
 export default function Custom404({ categories }) {
   return (

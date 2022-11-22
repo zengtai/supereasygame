@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Banner */
+
 @media (min-width: 300px) {
   .AdContainer {
     width: 300px;
@@ -50,6 +52,19 @@
 ins.adsbygoogle[data-ad-status="unfilled"] {
   display: none !important;
 }
+
+/* Footer */
+.site-footer {
+  @apply mt-3 bg-cyan-700 text-center text-xs text-sky-200;
+}
+.footer-nav {
+  @apply space-x-5 bg-cyan-500 p-3 shadow;
+}
+.copyright {
+  @apply py-7 text-sky-200/50;
+}
+
+/* Page */
 
 .page {
   @apply p-6 xl:mx-auto xl:w-[1120px];

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { closeIcon, menuIcon, homeIcon } from "./Icons";
+import { closeIcon, menuIcon } from "./Icons";
 import Image from "./Image";
 import { SITE_META } from "../lib/constants";
 
@@ -46,7 +46,7 @@ export default function Navbar({ items, isOpen }) {
             {/* {homeIcon()} */}
             <Image
               src="/brand/logo-sm.png"
-              alt={SITE_META.name}
+              alt={SITE_META.NAME}
               width={80}
               height={80}
               className="w-full"

@@ -7,9 +7,9 @@
 - `API_URL` // 游戏源
 - `GAME_PATH` // 渠道游戏路径
 
-- `SITE_META.name` // 网站名称
-- `SITE_META.url` // 网站网址
-- `SITE_META.domain` // 网站域名
+- `SITE_META.NAME` // 网站名称
+- `SITE_META.URL` // 网站网址
+- `SITE_META.DOMAIN` // 网站域名
 
 - `GA_ID` // Google Analytics ID
 - `ADSENSE_ID` // Google Adsense ID
