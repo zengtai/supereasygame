@@ -52,8 +52,10 @@ export default function GamesByCategory({
           <h1 className="px-2 pb-2 text-center text-xl font-semibold capitalize text-sky-100 drop-shadow md:pb-3 md:text-3xl">
             {categoryName} Games
           </h1>
-          <div className="text-center text-xs">{`(Total: ${total})`}</div>
-          <div className="my-3 mx-4 text-xs">{category.description}</div>
+          <div className="text-center text-xs xl:text-sm">{`(Total: ${total})`}</div>
+          <div className="my-3 mx-4 text-xs xl:text-center xl:text-sm">
+            {category.description}
+          </div>
           <div className="mx-6 mb-4">
             <List cols="4" games={games} />
           </div>
@@ -64,7 +66,7 @@ export default function GamesByCategory({
 }
 
 export async function getStaticProps(ctx) {
-  const data = await dataByCategorySlug(ctx.params.category, 1, 20);
+  const data = await dataByCategorySlug(ctx.params.category, 1, 36);
   const categories = await categoryList();
 
   return {
