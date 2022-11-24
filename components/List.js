@@ -29,7 +29,7 @@ export default function List({ title, games, icon, cols, className }) {
               <h3 className="leading-4">{game.title}</h3>
               <p className="flex flex-row items-center justify-center text-xl font-bold text-orange-500">
                 {starIcon()}
-                {game?.rating}
+                {game?.rating.toFixed(1)}
               </p>
             </div>
           </div>
@@ -57,11 +57,6 @@ export default function List({ title, games, icon, cols, className }) {
           </h2>
           <ul
             className={`grid ${setCol()} gap-3 py-3 sm:grid-cols-4 md:grid-cols-6 md:gap-6 xl:grid-cols-8 2xl:grid-cols-12`}
-
-            // className={
-            //   setCol()
-            //     ? `grid grid-cols-${cols} sm:grid-cols-4 md:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-12 gap-3 p-2`
-            //     : `grid grid-cols-4 sm:grid-cols-4 md:grid-cols-6 xl:grid-cols-8 2xl:grid-cols-12 gap-3 p-2`
           >
             {gamesList}
           </ul>

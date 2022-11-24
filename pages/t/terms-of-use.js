@@ -1,14 +1,14 @@
 import Layout from "@/components/Layout";
 import { SITE_META } from "@/lib/constants";
 import Head from "next/head";
-import { getGames } from "@/lib/api";
+import { categoryList } from "@/lib/api/v2";
 export default function Terms({ categories }) {
   return (
     <>
       <Head>
         <title>{`${SITE_META.NAME} Terms of Use`}</title>
       </Head>
-      <Layout items={categories}>
+      <Layout navItems={categories}>
         <div className="page">
           <h1>{SITE_META.NAME} Terms of Use</h1>
           <p>
@@ -513,7 +513,7 @@ export default function Terms({ categories }) {
 }
 
 export const getStaticProps = async () => {
-  const categories = await getGames().then((res) => res.categories);
+  const categories = await categoryList();
 
   return {
     props: {

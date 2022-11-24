@@ -26,7 +26,7 @@ const ListItem = ({ games, className }) => {
               <h3 className="leading-4">{game.title}</h3>
               <p className="flex flex-row items-center justify-center text-xl font-bold text-orange-500">
                 {starIcon()}
-                {game?.rating}
+                {(game?.rating * 1).toFixed(1)}
               </p>
             </div>
           </div>

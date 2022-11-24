@@ -31,22 +31,15 @@ import List from "@/components/List";
 import Category from "@/components/Category";
 import dynamic from "next/dynamic";
 import Script from "next/script";
-import { categoryList, dataForHome } from "@/lib/api/v2";
+import { categoryList, dataForHome, getTotal } from "@/lib/api/v2";
 
 // import InfiniteScroll from "react-infinite-scroll-component";
 const InfiniteScroll = dynamic(() => import("react-infinite-scroll-component"));
 const Banner = dynamic(() => import("@/components/Banner"));
 // export const config = { amp: "hybrid" };
 
-export default function Home({
-  games,
-  newGames,
-  featuredGames,
-  categories,
-  tmp,
-}) {
+export default function Home({ games, newGames, featuredGames, categories }) {
   // const isAmp = useAmp();
-  console.log(`tmp: `, tmp);
 
   const initGames = games.slice(0, 24);
   const total = games.length;
@@ -91,7 +84,7 @@ export default function Home({
           />
         )}
         <div className="relative z-30 grow pt-5">
-          <div className="px-6 md:px-8">
+          {/* <div className="px-6 md:px-8">
             <List
               icon={hotIcon()}
               games={featuredGames}
@@ -107,10 +100,10 @@ export default function Home({
               title="New Games"
               cols="4"
             />
-          </div>
+          </div> */}
 
           <div className="px-6 md:px-8">
-            <h2 className="flex items-center space-x-2 py-2 pb-0 font-semibold text-sky-100 drop-shadow md:text-lg">
+            <h2 className="flex items-center space-x-2 pt-2 font-semibold text-sky-100 drop-shadow md:text-lg">
               <span className="text-lime-400">{gameIcon()}</span>
               <span>All Games</span>
             </h2>
@@ -134,22 +127,17 @@ export default function Home({
 export const getStaticProps = async () => {
   // const games = await getGames();
   // const data = await getGames();
-  const games = await dataForHome(1, 24).then((res) => res.games);
-  const newGames = games.slice(0, 8);
-  const featuredGames = games.filter((item) =>
-    FEATURED_GAMES.includes(item.name)
-  );
-  // const categories = data.categories;
+  const total = await getTotal();
+  console.log(`total: `, total);
+  const games = await dataForHome(1, total).then((res) => res.games);
 
-  const tmp = await dataForHome();
+  // const categories = data.categories;
 
   const categories = await categoryList();
 
   return {
     props: {
-      games: games.reverse(),
-      newGames,
-      featuredGames,
+      games,
       categories,
     },
   };

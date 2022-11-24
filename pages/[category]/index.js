@@ -8,7 +8,7 @@ import { SHOW_AD, ADS_SLOT_ID, SITE_META, ADS_ID } from "@/lib/constants";
 import Banner from "@/components/Banner";
 import Script from "next/script";
 import Breadcrumb from "@/components/Breadcrumb";
-import { dataByCategorySlug, categoryList } from "@/lib/api/v2";
+import { dataByCategorySlug, categoryList, getTotal } from "@/lib/api/v2";
 
 export default function GamesByCategory({
   games,
@@ -66,8 +66,11 @@ export default function GamesByCategory({
 }
 
 export async function getStaticProps(ctx) {
-  const data = await dataByCategorySlug(ctx.params.category, 1, 36);
+  const total = await getTotal(ctx.params.category);
+  const data = await dataByCategorySlug(ctx.params.category, 1, total);
   const categories = await categoryList();
+
+  console.log(`${ctx.params.category}: `, total);
 
   return {
     props: {
