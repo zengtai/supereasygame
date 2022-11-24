@@ -30,7 +30,7 @@ export default function GamesByCategory({
           <title>
             {`${categoryName} Games - Play Now for Free at ${SITE_META.NAME}!`}
           </title>
-          <link rel="canonical" href={`${SITE_META.URL + category}/`} />
+          <link rel="canonical" href={`${SITE_META.URL + category.slug}/`} />
           {/* <title>
             {`${categoryName} Games by ${SITE_META.NAME} : Free Online Games to Play`}
           </title> */}
