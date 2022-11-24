@@ -4,7 +4,7 @@ import Link from "next/link";
 import { starIcon } from "./Icons";
 import { useState } from "react";
 
-import { IMAGE_PATH, IMAGE_FORMAT } from "../lib/constants";
+import { IMAGE_PATH, IMAGE_FORMAT, GAME_PATH } from "../lib/constants";
 
 export default function Detail({ game }) {
   const [isShowAll, setIsShowAll] = useState(false);
@@ -56,7 +56,7 @@ export default function Detail({ game }) {
         </div>
       </div>
       <div className="mx-6 py-4 md:mx-8 md:pt-4 ">
-        <Link href={`game?.url`}>
+        <Link href={`${GAME_PATH + game.appid}`}>
           <a
             // onClick={handleClick}
             className="mx-auto mb-4 block rounded-full bg-lime-500 p-3 text-center text-lg font-semibold text-white shadow-xl shadow-black/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:shadow-black/40 md:hover:delay-100 lg:p-4 lg:text-2xl"
