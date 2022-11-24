@@ -71,7 +71,7 @@ export default function Home({ games, newGames, featuredGames, categories }) {
           />
           <meta
             name="keywords"
-            content={`supereasy game, supereasy games, instant games, easy game, free online games, casual games, flash games, browser games, free games to play, arcade games, pc games download, online games for pc, best online games, free games for pc, play games online`}
+            content={`${SITE_META.NAME.toLowerCase()}, ${SITE_META.NAME.toLowerCase()}s, instant games, easy game, free online games, casual games, flash games, browser games, free games to play, arcade games, pc games download, online games for pc, best online games, free games for pc, play games online`}
           />
         </Head>
         {SHOW_AD && (

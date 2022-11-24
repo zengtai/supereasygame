@@ -34,7 +34,7 @@ export default function GamesByCategory({
           {/* <title>
             {`${categoryName} Games by ${SITE_META.NAME} : Free Online Games to Play`}
           </title> */}
-          <meta name="description" content="" />
+          <meta name="description" content={category.description} />
           <meta
             name="keywords"
             content={`${categoryName} game, ${categoryName} games, free ${categoryName} game, free ${categoryName} games, ${categoryName} online game, ${categoryName} online games`}

@@ -96,7 +96,7 @@ export default function Games({ game, categories, leftGames, rightGames }) {
 
 export async function getStaticProps(ctx) {
   const categories = await categoryList();
-  const data = await dataBySlug(ctx.params.game);
+  const data = await dataBySlug(ctx.params.game, 16);
   console.log(`data: `, data);
   const game = data.game[0];
 
