@@ -8,7 +8,12 @@ import { sparklesIcon } from "@/components/Icons";
 import Layout from "@/components/Layout";
 import ListItem from "@/components/ListItem";
 // import { getGames } from "@/lib/api";
-import { categoryList, dataBySlug, getAllGamesWithSlug } from "@/lib/api/v2";
+import {
+  categoryList,
+  dataBySlug,
+  getAllGamesWithSlug,
+  getTotal,
+} from "@/lib/api/v2";
 import { SHOW_AD, ADS_SLOT_ID, SITE_META, ADS_ID } from "@/lib/constants";
 const Banner = dynamic(() => import("@/components/Banner"));
 
@@ -104,8 +109,8 @@ export async function getStaticProps(ctx) {
 
   return {
     props: {
-      game: game,
-      categories: categories,
+      game,
+      categories,
       leftGames: relatedGames.slice(0, 8),
       rightGames: relatedGames.slice(8, 16),
       // bottomGames: relatedGames.slice(16, 24),
@@ -114,7 +119,8 @@ export async function getStaticProps(ctx) {
 }
 
 export const getStaticPaths = async () => {
-  const games = await getAllGamesWithSlug();
+  const total = await getTotal();
+  const games = await getAllGamesWithSlug(total);
   const paths = games.map((game) => ({
     params: {
       game: game.slug,
