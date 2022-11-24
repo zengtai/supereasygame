@@ -13,11 +13,13 @@ const Banner = ({
   auto,
 }) => {
   useEffect(() => {
-    try {
-      let adsbygoogle = window.adsbygoogle || [];
-      adsbygoogle.push({});
-    } catch (e) {
-      console.error(e.message);
+    if (SHOW_AD) {
+      try {
+        let adsbygoogle = window.adsbygoogle || [];
+        adsbygoogle.push({});
+      } catch (e) {
+        console.error(e.message);
+      }
     }
   }, []);
 

@@ -13,31 +13,30 @@ export default function Navbar({ items, isOpen }) {
   function toggle() {
     setMenuOpen(!isMenuOpen);
   }
-  // console.log(children);
-  const categoryNav = items.sort().map((category) => {
-    return (
-      <li
-        className={`${
-          category == current.slug
-            ? `border-slate-50/80 bg-slate-50/20 md:bg-slate-50/10 md:shadow-lg`
-            : `border-slate-50/20 bg-slate-50/10 md:border-slate-50/0 md:shadow-none`
-        } m-1 overflow-hidden rounded-xl border-2 transition duration-500 ease-in-out hover:bg-slate-50/10 md:bg-slate-50/0`}
-        key={category}
-      >
-        <Link href={`/category/${category.toLowerCase().replace(/ /g, `-`)}`}>
-          <a
-            className={`${
-              category.toLowerCase().replace(/ /g, `-`) == current.slug
-                ? `bg-slate-50/10 opacity-80`
-                : `opacity-50`
-            } block p-2 text-white`}
-          >
-            {category}
-          </a>
-        </Link>
-      </li>
-    );
-  });
+  console.log(`items: `, items);
+
+  const categoryNav = items?.map((category) => (
+    <li
+      className={`${
+        category.slug == current.slug
+          ? `border-slate-50/80 bg-slate-50/20 md:bg-slate-50/10 md:shadow-lg`
+          : `border-slate-50/20 bg-slate-50/10 md:border-slate-50/0 md:shadow-none`
+      } m-1 overflow-hidden rounded-xl border-2 transition duration-500 ease-in-out hover:bg-slate-50/10 md:bg-slate-50/0`}
+      key={category.slug}
+    >
+      <Link href={`/${category.slug}`}>
+        <a
+          className={`${
+            category.slug == current.slug
+              ? `bg-slate-50/10 opacity-80`
+              : `opacity-50`
+          } block p-2 text-white`}
+        >
+          {category.name}
+        </a>
+      </Link>
+    </li>
+  ));
   return (
     <nav className="relative bg-cyan-600 shadow-sm md:bg-transparent">
       <div className="relative z-10 block">
@@ -51,6 +50,7 @@ export default function Navbar({ items, isOpen }) {
               height={80}
               className="w-full"
             />
+            <h1 className="sr-only">{SITE_META.NAME}</h1>
           </a>
         </Link>
         <button
@@ -65,7 +65,7 @@ export default function Navbar({ items, isOpen }) {
           } relative z-30 block p-3 md:z-10
           `}
         >
-          <ul className="flex flex-wrap rounded-3xl bg-cyan-900 p-2 capitalize shadow-lg shadow-slate-900/20 md:ml-3 md:mt-2 md:pl-20">
+          <ul className="grid grid-cols-3 rounded-3xl bg-cyan-900 p-2 text-center capitalize shadow-lg shadow-slate-900/20 md:ml-3 md:mt-2 md:pl-20 xl:flex xl:flex-wrap">
             {categoryNav}
           </ul>
         </div>

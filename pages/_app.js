@@ -5,8 +5,9 @@ import * as gtag from "@/lib/gtag";
 import { GA_ID } from "@/lib/constants";
 import NProgress from "nprogress";
 import "@/styles/globals.css";
-import "../public/nprogress.css";
+import "@/styles/nprogress.css";
 import Head from "next/head";
+import "@/styles/banner.css";
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter();

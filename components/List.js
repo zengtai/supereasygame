@@ -11,12 +11,12 @@ export default function List({ title, games, icon, cols, className }) {
   };
 
   const gamesList = games.map((game) => (
-    <li key={game.id} className={className}>
-      <Link href={`/game/${game.slug}`}>
+    <li key={game.appid} className={className}>
+      <Link href={`/${game.category.slug}/${game.slug}`}>
         <a className="group md:delay-50 duration-400 relative block aspect-square overflow-hidden rounded-2xl shadow-md shadow-black/30 transition ease-in-out hover:shadow-lg hover:shadow-black/40 md:hover:origin-bottom md:hover:scale-110">
           <Image
             src={
-              IMAGE_PATH + IMAGE_FORMAT + `/` + game.name + `.` + IMAGE_FORMAT
+              IMAGE_PATH + IMAGE_FORMAT + `/` + game.appid + `.` + IMAGE_FORMAT
             }
             alt={game.title}
             width={200}
@@ -29,7 +29,7 @@ export default function List({ title, games, icon, cols, className }) {
               <h3 className="leading-4">{game.title}</h3>
               <p className="flex flex-row items-center justify-center text-xl font-bold text-orange-500">
                 {starIcon()}
-                {game.stars}
+                {game?.rating}
               </p>
             </div>
           </div>

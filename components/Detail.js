@@ -26,7 +26,7 @@ export default function Detail({ game }) {
         <div className="aspect-square h-24 w-24 shrink-0 md:h-40 md:w-40">
           <Image
             src={
-              IMAGE_PATH + IMAGE_FORMAT + "/" + game.name + `.` + IMAGE_FORMAT
+              IMAGE_PATH + IMAGE_FORMAT + "/" + game.appid + `.` + IMAGE_FORMAT
             }
             alt={game.title}
             width={200}
@@ -41,45 +41,39 @@ export default function Detail({ game }) {
           </h1>
           <div>
             <span className="rounded-md bg-lime-600/80 py-1 px-2 text-xs text-sky-100/90 shadow-md shadow-lime-500/30">
-              {game.category.toLowerCase() === "io"
-                ? "IO"
-                : game.category
-                    .toLowerCase()
-                    .replace(/^\S/, (s) => s.toUpperCase())}
+              {game.category.name}
             </span>
           </div>
           <p className="mt-3 flex flex-row items-center justify-center space-x-3 md:justify-start">
             <span className="text-2xl font-bold">
               <span className="flex flex-row items-center text-orange-500">
                 <span>{starIcon()}</span>
-                {game.stars}
+                {game?.rating}
               </span>
             </span>
-            <span className="opacity-50">{game.played} played</span>
+            <span className="opacity-50">{game?.played} played</span>
           </p>
-          <div className="text-left text-sm text-sky-800/80 md:text-sm">
-            <div
-              onClick={toggle}
-              className={`
-            ${
-              isShowAll ? `h-auto` : `max-h-16`
-            } relative w-full overflow-hidden text-ellipsis py-3 text-slate-500 after:absolute after:left-0 after:bottom-0 after:h-5 after:w-full after:bg-gradient-to-t after:from-white after:to-white/0`}
-            >
-              {game.description}
-            </div>
-          </div>
         </div>
       </div>
       <div className="mx-6 py-4 md:mx-8 md:pt-4 ">
-        <Link href={game.url}>
+        <Link href={`game?.url`}>
           <a
             // onClick={handleClick}
-            className="mx-auto block rounded-full bg-lime-500 p-3 text-center text-lg font-semibold text-white shadow-xl shadow-black/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:shadow-black/40 md:hover:delay-100 lg:p-4 lg:text-2xl"
+            className="mx-auto mb-4 block rounded-full bg-lime-500 p-3 text-center text-lg font-semibold text-white shadow-xl shadow-black/20 transition-transform duration-300 ease-in-out md:w-96 md:hover:scale-110 md:hover:shadow-2xl md:hover:shadow-black/40 md:hover:delay-100 lg:p-4 lg:text-2xl"
             title={`Play ${game.title} now`}
           >
             PLAY NOW
           </a>
         </Link>
+        <div className="text-left text-sm text-sky-800/80 md:text-sm">
+          <div
+            onClick={toggle}
+            className={`
+            relative h-auto w-full overflow-hidden text-ellipsis border-b border-cyan-500 py-3 text-cyan-100`}
+          >
+            {game.description}
+          </div>
+        </div>
       </div>
     </>
   );

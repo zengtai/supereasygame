@@ -1,10 +1,11 @@
 import Head from "next/head";
 import Layout from "@/components/Layout";
 import { getGames } from "@/lib/api";
+import { categoryList } from "@/lib/api/v2";
 
 export default function Custom404({ categories }) {
   return (
-    <Layout items={categories}>
+    <Layout navItems={categories}>
       <Head>
         <title>404</title>
       </Head>
@@ -18,7 +19,7 @@ export default function Custom404({ categories }) {
 }
 
 export const getStaticProps = async () => {
-  const categories = await getGames().then((res) => res.categories);
+  const categories = await categoryList();
 
   return {
     props: {

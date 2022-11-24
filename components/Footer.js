@@ -11,10 +11,10 @@ export default function Footer() {
           <a ref={`nofollow`}>Terms of Use</a>
         </Link>
       </nav>
-      <p className="copyright">
-        {`Copyright © ${new Date().getFullYear()} ${SITE_META.NAME}. All Rights
-        Reserved`}
-      </p>
+      <div className="copyright">
+        <p>{`Copyright © ${new Date().getFullYear()} ${SITE_META.NAME}`}</p>
+        <p>All Rights Reserved</p>
+      </div>
     </footer>
   );
 }

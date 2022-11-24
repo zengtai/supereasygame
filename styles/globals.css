@@ -2,63 +2,27 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Banner */
+/* Breadcrumb */
 
-@media (min-width: 300px) {
-  .AdContainer {
-    width: 300px;
-  }
-  .banner {
-    height: 100px;
-  }
-  .banner_sm {
-    height: 50px;
-  }
-  .rectangle {
-    height: 200px;
-  }
-}
-@media (min-width: 468px) {
-  .AdContainer {
-    width: 468px;
-    height: 60px;
-  }
-}
-@media (min-width: 728px) {
-  .AdContainer {
-    width: 728px;
-    height: 90px;
-  }
-}
-@media (min-width: 970px) {
-  .AdContainer {
-    width: 970px;
-    height: 90px;
-  }
-  .safe {
-    width: 728px;
-  }
-  .banner_lg {
-    height: 250px;
-  }
+.breadcrumb {
+  @apply mx-4 flex flex-wrap space-x-2 pb-6 text-xs drop-shadow md:mx-8 xl:text-sm;
 }
 
-@media (min-width: 1920px) {
-  .safe {
-    width: 970px;
-  }
-}
-
-ins.adsbygoogle[data-ad-status="unfilled"] {
-  display: none !important;
+.breadcrumb span {
+  @apply text-white/50;
 }
 
 /* Footer */
+
 .site-footer {
   @apply mt-3 bg-cyan-700 text-center text-xs text-sky-200;
 }
 .footer-nav {
   @apply space-x-5 bg-cyan-500 p-3 shadow;
+}
+
+.footer-nav a {
+  @apply drop-shadow;
 }
 .copyright {
   @apply py-7 text-sky-200/50;
