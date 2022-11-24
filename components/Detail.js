@@ -48,7 +48,7 @@ export default function Detail({ game }) {
             <span className="text-2xl font-bold">
               <span className="flex flex-row items-center text-orange-500">
                 <span>{starIcon()}</span>
-                {game?.rating}
+                {game?.rating.toFixed(1)}
               </span>
             </span>
             <span className="opacity-50">{game?.played} played</span>
