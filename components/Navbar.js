@@ -41,7 +41,7 @@ export default function Navbar({ items, isOpen }) {
     <nav className="relative bg-cyan-600 shadow-sm md:bg-transparent">
       <div className="relative z-10 block">
         <Link href={`/`}>
-          <a className="shadow-[lg] absolute -left-2 -top-2 z-20 flex h-16 w-16 items-center justify-center rounded-[100%] bg-cyan-600 p-3 text-cyan-800 shadow-stone-900 transition duration-500 ease-in-out md:top-5 md:left-3 md:h-16 md:w-16 md:bg-cyan-400 md:outline md:outline-[6px] md:hover:scale-105 md:hover:bg-cyan-300">
+          <a className="shadow-[lg] absolute -left-2 -top-2 z-20 flex h-16 w-16 items-center rounded-[100%] bg-cyan-600 p-3 text-cyan-800 shadow-stone-900 transition duration-500 ease-in-out md:top-5 md:left-3 md:h-16 md:w-16 md:bg-cyan-400 md:outline md:outline-[6px] md:hover:scale-105 md:hover:bg-cyan-300">
             {/* {homeIcon()} */}
             <Image
               src="/brand/logo-sm.png"
@@ -50,7 +50,9 @@ export default function Navbar({ items, isOpen }) {
               height={80}
               className="w-full"
             />
-            <h1 className="sr-only">{SITE_META.NAME}</h1>
+            <span className="ml-3 whitespace-nowrap text-lg font-bold leading-5 text-white xl:ml-8 xl:whitespace-normal">
+              {SITE_META.NAME}
+            </span>
           </a>
         </Link>
         <button
@@ -65,7 +67,7 @@ export default function Navbar({ items, isOpen }) {
           } relative z-30 block p-3 md:z-10
           `}
         >
-          <ul className="grid grid-cols-3 rounded-3xl bg-cyan-900 p-2 text-center capitalize shadow-lg shadow-slate-900/20 md:ml-3 md:mt-2 md:pl-20 xl:flex xl:flex-wrap">
+          <ul className="grid grid-cols-3 rounded-3xl bg-cyan-900 p-2 text-center capitalize shadow-lg shadow-slate-900/20 md:ml-3 md:mt-2 md:pl-48 xl:flex xl:flex-wrap">
             {categoryNav}
           </ul>
         </div>

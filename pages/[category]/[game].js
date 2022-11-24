@@ -22,6 +22,8 @@ export default function Games({ game, categories, leftGames, rightGames }) {
 
   let gameName = game.title.toLowerCase();
 
+  const metaLink = { ref: "canonial" };
+
   const AsideGameList = ({ games }) => {
     return (
       <ul className="grid w-full grid-cols-4 gap-3 md:grid-cols-10 md:gap-6 xl:grid-cols-2">
@@ -38,7 +40,7 @@ export default function Games({ game, categories, leftGames, rightGames }) {
             {`${game.title}  - Play Now for Free at ${SITE_META.NAME}!`}
           </title>
           <link
-            ref={`canonial`}
+            rel="canonical"
             href={`${
               SITE_META.URL + game.category.slug + "/" + game.slug + "/"
             }`}
