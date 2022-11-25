@@ -1,6 +1,9 @@
 # *
 User-agent: *
-Allow: /
+Disallow: cdn.supereasygame.com
+Disallow: cdn2.supereasygame.com
+Disallow: cdn3.supereasygame.com
+Disallow: gamecdn.supereasygame.com
 
 # Host
 Host: https://www.supereasygame.com

@@ -4,7 +4,13 @@ import List from "@/components/List";
 import { useRouter } from "next/router";
 import { getGamesByCategory, getGames } from "@/lib/api";
 import Head from "next/head";
-import { SHOW_AD, ADS_SLOT_ID, SITE_META, ADS_ID } from "@/lib/constants";
+import {
+  SHOW_AD,
+  ADS_SLOT_ID,
+  SITE_META,
+  ADS_ID,
+  SELECTED_GAMES,
+} from "@/lib/constants";
 import Banner from "@/components/Banner";
 import Script from "next/script";
 import Breadcrumb from "@/components/Breadcrumb";
@@ -22,6 +28,7 @@ export default function GamesByCategory({
   // console.log(router.query);
   // console.log({ slug });
   console.log(`category: `, category.name);
+
   const categoryName = category.name;
   return (
     <>

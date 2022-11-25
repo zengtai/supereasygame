@@ -7,6 +7,7 @@ import {
   IMAGE_FORMAT,
   ADS_ID,
   SHOW_AD,
+  SELECTED_GAMES,
 } from "@/lib/constants";
 
 import Head from "next/head";
@@ -34,30 +35,37 @@ import Script from "next/script";
 import { categoryList, dataForHome, getTotal } from "@/lib/api/v2";
 
 // import InfiniteScroll from "react-infinite-scroll-component";
-const InfiniteScroll = dynamic(() => import("react-infinite-scroll-component"));
+// const InfiniteScroll = dynamic(() => import("react-infinite-scroll-component"));
 const Banner = dynamic(() => import("@/components/Banner"));
 // export const config = { amp: "hybrid" };
 
-export default function Home({ games, newGames, featuredGames, categories }) {
+export default function Home({ games, categories }) {
   // const isAmp = useAmp();
+  console.log(
+    `games: `,
+    games
+      .filter((i) => SELECTED_GAMES.includes(i.appid))
+      .map((i) => `/${i.category.slug}/${i.slug}`)
+      .join(`,`)
+  );
 
-  const initGames = games.slice(0, 24);
-  const total = games.length;
+  // const initGames = games.slice(0, 24);
+  // const total = games.length;
 
-  const [scrollGames, setScrollGames] = useState(initGames);
-  const [hasMore, setHasMore] = useState(true);
+  // const [scrollGames, setScrollGames] = useState(initGames);
+  // const [hasMore, setHasMore] = useState(true);
 
-  const getMoreGames = () => {
-    const newScrollGames = games.slice(
-      scrollGames.length,
-      scrollGames.length + 12
-    );
-    setScrollGames((game) => [...game, ...newScrollGames]);
+  // const getMoreGames = () => {
+  //   const newScrollGames = games.slice(
+  //     scrollGames.length,
+  //     scrollGames.length + 12
+  //   );
+  //   setScrollGames((game) => [...game, ...newScrollGames]);
 
-    if (scrollGames.length >= total) {
-      setHasMore(!hasMore);
-    }
-  };
+  //   if (scrollGames.length >= total) {
+  //     setHasMore(!hasMore);
+  //   }
+  // };
 
   return (
     <>
