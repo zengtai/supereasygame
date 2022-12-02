@@ -3,6 +3,7 @@ module.exports = {
   siteUrl: process.env.SITE_URL || "https://www.supereasygame.com",
   generateRobotsTxt: true, // (optional)
   // ...other options
+  exclude: ["/t/privacy-policy", "/t/terms-of-use"],
   robotsTxtOptions: {
     policies: [
       {
