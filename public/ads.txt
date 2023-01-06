@@ -153,3 +153,7 @@ google.com, pub-3775285987185663, DIRECT, f08c47fec0942fa0
 yahoo.com, 59189, RESELLER
 
 adyoulike.com, 28ad2f40b1f6f683d160ee433903c399, RESELLER
+
+
+# 20230106
+google.com, pub-1533177475762808, DIRECT, f08c47fec0942fa0
